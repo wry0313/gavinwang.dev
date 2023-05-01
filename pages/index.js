@@ -10,8 +10,8 @@ export default function Home() {
         <title>{siteTitle}</title>
       </Head>
       <section className="{utilStyles.headingMd}">
-        <p>Hello! I'm Gavin Wang. I will be using this website to write about what I learned in ML!</p>
-        <Link href="/about_me">about me</Link>
+        <p>Hello. I'm Gavin. Here is where I will be writing about what I learned in the field of machine learning!</p>
+        <Link href="/about_me">Learn more about me!</Link>
 
       </section>
     </Layout>
