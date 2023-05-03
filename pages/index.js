@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Layout, { siteTitle } from '../components/layout';
-import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link'
 import Date from '../components/date';
 
@@ -28,9 +27,9 @@ export default function Home({ allPostsData }) {
 
       <section>
         <h2 className="text-[1.5rem] leading-[1.4] my-4">Blog</h2>
-        <u1 className={utilStyles.list}>
+        <u1 className="list-none">
           {allPostsData.map(post => (
-            <li className={utilStyles.listItem} key={post.id}>
+            <li className="mb-[1.25rem]" key={post.id}>
               <Link href={`/posts/${post.id}`}> {post.title}</Link>
               <br />
               <div className="text-gray-600">

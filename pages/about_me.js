@@ -7,7 +7,7 @@ export default function FirstPost() {
       <Head>
         <title>Gavin Wang about me</title>
       </Head>
-      <h1>about me blablabla</h1>
+      <h1>a</h1>
     </Layout>
   );
 }
