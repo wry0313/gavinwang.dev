@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Gavin Wang';
@@ -30,7 +29,7 @@ export default function Layout({ children, home }) {
             <Image
               priority
               src="/images/profile.jpg"
-              className={utilStyles.borderCircle}
+              className="rounded-full"
               height={144}
               width={144}
               alt=""
@@ -43,7 +42,7 @@ export default function Layout({ children, home }) {
               <Image
                 priority
                 src="/images/profile.jpg"
-                className={utilStyles.borderCircle}
+                className="rounded-full"
                 height={108}
                 width={108}
                 alt=""
