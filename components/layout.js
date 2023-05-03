@@ -36,7 +36,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt=""
             />
-            <h1 className="text-8xl font-bold">{siteTitle}</h1>
+            <h1 className="text-6xl md:text-8xl font-bold box-border">{siteTitle}</h1>
           </>
         ) : (
           <>
