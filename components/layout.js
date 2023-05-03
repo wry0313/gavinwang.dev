@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
@@ -9,7 +8,7 @@ export const siteTitle = 'The Machine Learning Blog';
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className="max-w-[36rem] px-[1rem] my-[3rem] mx-auto">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -25,7 +24,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className="flex flex-col items-center">
         {home ? (
           <>
             <Image
@@ -36,7 +35,7 @@ export default function Layout({ children, home }) {
               width={144}
               alt=""
             />
-            <h1 className="text-6xl md:text-8xl font-bold box-border">{siteTitle}</h1>
+            <h1 className="text-6xl md:text-8xl font-bold my-2">{siteTitle}</h1>
           </>
         ) : (
           <>
@@ -50,17 +49,15 @@ export default function Layout({ children, home }) {
                 alt=""
               />
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
+            <h2 className="text-[1.5rem] leading-normal my-[1rem]">
               <h1 className="text-2xl font-bold">{name}</h1>
-              </Link>
             </h2>
           </>
         )}
       </header>
       <main>{children}</main>
       {!home && (
-        <div className={styles.backToHome}>
+        <div className="mt-[3rem]">
           <Link href="/">← Back to home</Link>
         </div>
       )}
