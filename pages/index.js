@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className="my-5">
-        <p>Hello. I'm Gavin. Here is where I will be writing about what I learned in the field of machine learning!</p>
+        <p>Hi there! My name is Gavin and I'll be sharing what I've learned about machine learning on this blog site. Welcome!</p>
         <Link href="/about_me">Learn more about me!</Link>
       </section>
 
