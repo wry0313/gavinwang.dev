@@ -39,6 +39,20 @@ export default function Home({ allPostsData }) {
           ))}
         </u1>
       </section>
+
+      <section>
+        <h2 className="text-[1.5rem] leading-[1.4] my-4">Project Demos</h2>
+        <u1 className="list-none">
+        <li className="mb-[1.25rem]">
+              <Link href="Dog_Cat_Classifier_Demo"> Dog vs. Cat Classifier Demo</Link>
+              <br />
+              <div className="text-gray-600">
+                <Date dateString="2023-05-03" />
+              </div>
+              
+        </li>
+        </u1>
+      </section>
     </Layout>
   );
 }
