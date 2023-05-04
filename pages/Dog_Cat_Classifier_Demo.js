@@ -21,8 +21,9 @@ export default function Demo() {
     async function processImage() {
         // replace this with your own image processing logic
         // console.log('Processing image:', image);
+        setPredictionText("trying very hard to classify...")
         const prediction = await classifyImage(imageUrl);
-        console.log(prediction);
+        // console.log(prediction);
         setPredictionText(formatPrediction(prediction));
     }
 
