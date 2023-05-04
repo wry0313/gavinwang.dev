@@ -67,7 +67,7 @@ export default function Demo() {
             </Head>
             <div className="">
             <h1 className="text-[3rem] leading-[1.3] font-bold mb-4 mx-auto">Dog vs. Cat Classifier</h1>
-                <input className="h-12 mr-[1rem] bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" type="file" onChange={handleFileInputChange}/>
+                <input className="max-w-[60%] h-12 mr-[1rem] bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" type="file" onChange={handleFileInputChange}/>
                 <button className="h-12 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={processImage} >Classify Image</button>
                 <div className="my-[1rem]">
                     {imageUrl && <Image src={imageUrl} height={288} width={288} alt="" className="mx-auto rounded shadow"/>}
