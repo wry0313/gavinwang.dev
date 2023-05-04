@@ -25,8 +25,8 @@ export default function Demo() {
         if (imageUrl != null) {
             setPredictionText("trying very hard to classify...")
             const prediction = await classifyImage(imageUrl);
-        // console.log(prediction);
-        setPredictionText(formatPrediction(prediction));
+            // console.log(prediction);
+            setPredictionText(formatPrediction(prediction));
         } else {
             setPredictionText("please upload an image first before clicking the button")
         }
@@ -71,12 +71,23 @@ export default function Demo() {
             <Head>
                 <title>Dog vs. Cat Classifyer</title>
             </Head>
-            <div className="">
-                <h1 className="text-[3rem] leading-[1.3] font-bold mb-4 mx-auto">Dog vs. Cat Classifier</h1>
-                <input className="w-[45%] h-12 mr-[1rem] bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" onChange={handleFileInputChange} />
-                <button className="w-[40%] h-12 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={processImage} >Classify Image</button>
+            <div className="flex flex-col item-center">
+
+                <div className="mx-auto">
+                    <h1 className="text-[3rem] leading-[1.3] font-bold mb-4">Dog vs. Cat Classifier</h1>
+                
+                    <div className="flex flex-row">
+                        <input className="text-sm md:text-base flex-1 mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" onChange={handleFileInputChange} />
+                        <button className="text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={processImage} >Classify Image</button> 
+                    </div>
+                </div>
+                <div >
                 {imageUrl && <Image src={imageUrl} height={288} width={288} alt="" className="my-[1rem] mx-auto rounded-lg shadow" />}
-                {predictionText && <h1 className="my-[1rem] text-center">{predictionText}</h1>}
+                </div>
+                <div >
+                    {predictionText && <h1 className="my-[1rem] text-center">{predictionText}</h1>}
+                </div>
+        
             </div>
         </Layout>
     );
