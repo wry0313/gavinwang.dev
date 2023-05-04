@@ -5,7 +5,7 @@ import Link from 'next/link';
 const name = 'Gavin Wang';
 export const siteTitle = 'The Machine Learning Blog';
 
-export default function Layout({ children, home }) {
+export default function Layout({ children, home, blog}) {
   return (
     <div className="max-w-[36rem] px-[1rem] my-[3rem] mx-auto">
       <Head>
@@ -24,7 +24,7 @@ export default function Layout({ children, home }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className="flex flex-col items-center">
-        {home ? (
+        {home && (
           <>
             <Image
               priority
@@ -36,7 +36,9 @@ export default function Layout({ children, home }) {
             />
             <h1 className="text-6xl md:text-8xl font-bold my-2">{siteTitle}</h1>
           </>
-        ) : (
+        )} 
+        
+        {blog && (
           <>
             <Link href="/">
               <Image
@@ -48,9 +50,7 @@ export default function Layout({ children, home }) {
                 alt=""
               />
             </Link>
-            <h2 className="text-[1.5rem] leading-normal my-[1rem]">
-              <h1 className="text-2xl font-bold">{name}</h1>
-            </h2>
+              <h1 className="my-[1rem] text-2xl font-bold">{name}</h1>
           </>
         )}
       </header>

@@ -5,12 +5,12 @@ import Date from '../../components/date'
 
 export default function Post({ postData }) {
     return (
-      <Layout>
+      <Layout blog>
         <Head>
             <title>{postData.title}</title>
         </Head>
         <article>
-            <h1 className="text-[2rem] leading-[1.3] font-extrabold tracking-[-0. my-4">{postData.title}</h1>
+            <h1 className="text-[2rem] leading-[1.3] font-extrabold my-4">{postData.title}</h1>
             <div className="text-gray-600">
                 <Date dateString={postData.date} />
             </div>
@@ -28,7 +28,8 @@ export async function getStaticPaths() {
         fallback: false,
     }
 }
-  
+
+//getStaticProps is given params, which contains id (because the file name is [id].js).
 export async function getStaticProps({ params }) {
     // Fetch necessary data for the blog post using params.id
     const postData = await getPostData(params.id);
