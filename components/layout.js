@@ -3,11 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 const name = 'Gavin Wang';
-export const siteTitle = 'The Machine Learning Blog';
+export const siteTitle = 'gavinwang.dev';
 
-export default function Layout({ children, home, blog}) {
+export default function Layout({ children, home}) {
   return (
-    <div className="max-w-[36rem] px-[1rem] my-[3rem] mx-auto">
+    <div className="max-w-[32rem] px-[1rem] my-[3rem] mx-auto">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -26,33 +26,19 @@ export default function Layout({ children, home, blog}) {
       <header className="flex flex-col items-center">
         {home && (
           <>
-            <Image
+            {/* <Image
               priority
               src="/images/profile.jpg"
               className="rounded-full"
               height={144}
               width={144}
               alt=""
-            />
-            <h1 className="text-6xl md:text-8xl font-bold my-2">{siteTitle}</h1>
+            /> */}
+            <h1 className="text-4xl md:text-7xl font-bold my-2">{siteTitle}</h1>
           </>
         )} 
         
-        {blog && (
-          <>
-            <Link href="/">
-              <Image
-                priority
-                src="/images/profile.jpg"
-                className="rounded-full"
-                height={108}
-                width={108}
-                alt=""
-              />
-            </Link>
-              <h1 className="my-[1rem] text-2xl font-bold">{name}</h1>
-          </>
-        )}
+       
       </header>
       <main>{children}</main>
       {!home && (

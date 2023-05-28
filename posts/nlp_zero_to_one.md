@@ -9,7 +9,7 @@ The content is based on Andrej Karparthy's video "Let's build GPT: from scratch,
 
 If you have no foundation in machine learning, I recommend going through fast.ai's curriculum part one before reading this article. It offers a fantastic introduction to deep learning (stochastic gradient descnet, embeddings, process of training a model) and will provide you with the necessary basics. In this walkthrough article, I assume you have a basic understanding of machine learning, but not enough to follow Karparthy's video independently!
 
-
 ```python
 print("lets get started->")
 ```
+

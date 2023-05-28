@@ -5,7 +5,7 @@ import Date from '../../components/date'
 
 export default function Post({ postData }) {
     return (
-      <Layout blog>
+      <Layout>
         <Head>
             <title>{postData.title}</title>
         </Head>
