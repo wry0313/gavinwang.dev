@@ -21,12 +21,12 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className="my-5">
-        <p>Hi there! My name is Gavin and I'll be sharing what I've learned about machine learning on this blog site. Welcome!</p>
-        <Link href="/about_me">Learn more about me!</Link>
+        <p>Hi there! 👋 My name is Gavin and I'll be sharing what I've learned about machine learning, web dev, and all things coding on this blog site ✍</p>
+        {/* <Link href="/about_me">Learn more about me!</Link> */}
       </section>
 
       <section>
-        <h2 className="text-[1.5rem] leading-[1.4] my-4">Blog</h2>
+        <h2 className="text-[1.5rem] leading-[1.4] my-4">📠 Blogs</h2>
         <u1 className="list-none">
           {allPostsData.map(post => (
             <li className="mb-[1.25rem]" key={post.id}>
@@ -41,7 +41,7 @@ export default function Home({ allPostsData }) {
       </section>
 
       <section>
-        <h2 className="text-[1.5rem] leading-[1.4] my-4">Project Demos</h2>
+        <h2 className="text-[1.5rem] leading-[1.4] my-4">💾 Project Demos</h2>
         <u1 className="list-none">
         <li className="mb-[1.25rem]">
               <Link href="Dog_Cat_Classifier_Demo"> Dog vs. Cat Classifier Demo</Link>
