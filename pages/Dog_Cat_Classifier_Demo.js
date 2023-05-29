@@ -69,12 +69,12 @@ export default function Demo() {
         <Layout>
 
             <Head>
-                <title>Dog vs. Cat Classifyer</title>
+                <title>og vs. Cat Classifyer</title>
             </Head>
             <div className="flex flex-col item-center">
 
                 <div className="mx-auto">
-                    <h1 className="text-center text-[2rem] sm:text-[2.8rem] md:text-[3.2rem]  leading-[1.3] font-bold mb-4">Dog vs. Cat Classifier</h1>
+                    <h1 className="text-center text-[2rem] sm:text-[2.8rem] md:text-[3.2rem]  leading-[1.3] font-bold mb-4">🐕 Dog vs. 🐈 Cat Classifier Demo</h1>
                     <div className="flex flex-col md:flex-row items-center">
                         <input className="w-[70%] mb-[0.3rem] md:mb-0 text-sm md:text-base flex-1 md:mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" onChange={handleFileInputChange} />
                         <button className="w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={processImage} >Classify Image</button> 
