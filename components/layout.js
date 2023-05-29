@@ -5,7 +5,7 @@ export const siteTitle = 'gavinwang.dev';
 
 export default function Layout({ children, home }) {
   return (
-    <div className="max-w-[36rem] my-[1rem] mx-auto">
+    <div className="max-w-[38rem] my-[1rem] px-[1rem] mx-auto">
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
