@@ -1,6 +1,6 @@
 ---
 title: '🧑‍🔧 Building a Language Model from Scratch in Code Spelled Out Explained in Details'
-date: '2023-05-29'
+date: '2023-05-30'
 ---
 
 Curious about how language models like GPT work? In this article, I'll take you on a journey to understand the inner workings of GPT and even build a simplified version of it from scratch :)
