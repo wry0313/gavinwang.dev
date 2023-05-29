@@ -1,7 +1,7 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
+import Layout, { siteTitle } from '../components/layout'
 import Link from 'next/link'
-import Date from '../components/date';
+import Date from '../components/date'
 
 import { getSortedPostsData } from '../lib/posts';
 
@@ -20,7 +20,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <header className="flex flex-col items-center bg-[#F5F7F7] rounded p-8">
+      <header className="flex flex-col items-center bg-[#F5F7F7] rounded p-8 hover:scale-105 transform transition-transform duration-300">
         <h1 className="text-[2.6rem] md:text-[3.6rem] font-bold ">🧑‍💻  {siteTitle}</h1>
         <section className="mt-5">
           <p>Hi there! 👋 My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍</p>
@@ -28,7 +28,7 @@ export default function Home({ allPostsData }) {
         </section>
       </header>
 
-      <section className='bg-[#F5F7F7] rounded p-2 my-4'>
+      <section className='bg-[#F5F7F7] rounded p-2 my-4 hover:scale-105 transform transition-transform duration-300'>
         <h2 className="text-[1.5rem] leading-[1.4]">📠 Blogs</h2>
         <u1 className="list-none">
           {allPostsData.map(post => (
@@ -43,7 +43,7 @@ export default function Home({ allPostsData }) {
         </u1>
       </section>
 
-      <section className='bg-[#F5F7F7] rounded p-2 my-4'>
+      <section className='bg-[#F5F7F7] rounded p-2 my-4 hover:scale-105 transform transition-transform duration-300'>
         <h2 className="text-[1.5rem] leading-[1.4]">💾 Project Demos</h2>
         <u1 className="list-none">
           <li className="mt-[1.25rem]">
