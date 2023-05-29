@@ -1,5 +1,5 @@
 ---
-title: 'GPT From Scratch in Code Spelled Out Explained in Details'
+title: '🧑‍🔧 Building a Language Model from Scratch in Code Spelled Out Explained in Details'
 date: '2023-05-29'
 ---
 

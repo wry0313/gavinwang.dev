@@ -14,13 +14,7 @@ export default function Layout({ children, home}) {
         />
         <meta name="og:title" content={siteTitle} />
       </Head>
-      <header className="flex flex-col items-center">
-          {home && (
-            <>
-              <h1 className="text-5xl md:text-6xl font-bold my-2">🧑‍💻{siteTitle}</h1>
-          </>
-        )} 
-      </header>
+      
       <main>{children}</main>
       {!home && (
         <div className="mt-[3rem]">
