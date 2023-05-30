@@ -21,7 +21,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <header className="flex flex-col items-center bg-[#F5F7F7] rounded p-8 hover:scale-105 transform transition-transform duration-300">
-        <h1 className=" text-[2.6rem] md:text-[3.6rem] font-bold ">🧑‍💻  {siteTitle}</h1>
+        <h1 className=" text-[3rem] md:text-[4.2rem] font-bold ">🧑‍💻  {siteTitle}</h1>
         <section className="mt-5">
           <p>Hi there! 👋 My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍</p>
           {/* <Link href="/about_me">Learn more about me!</Link> */}
