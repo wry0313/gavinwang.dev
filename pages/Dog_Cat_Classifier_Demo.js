@@ -10,6 +10,7 @@ export default function Demo() {
     const [imageUrl, setImageUrl] = useState(null);
     const [predictionText, setPredictionText] = useState("");
 
+
     async function handleFileInputChange(e) {
         const files = e.target.files;
         if (files.length > 0) {
@@ -60,7 +61,8 @@ export default function Demo() {
         const request = new Request(classificationEndpoint, {
             method: 'POST',
             headers: headers,
-            body: jsonDataString
+            body: jsonDataString,
+
         });
         return fetch(request).then(response => response.json());
     }
@@ -87,17 +89,17 @@ export default function Demo() {
 
     async function getWidth(imageUrl) {
         return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.onload = () => {
-            const width = img.width;
-            resolve(width);
-          };
-          img.onerror = () => {
-            reject(new Error('Failed to load image.'));
-          };
-          img.src = imageUrl;
+            const img = new Image();
+            img.onload = () => {
+                const width = img.width;
+                resolve(width);
+            };
+            img.onerror = () => {
+                reject(new Error('Failed to load image.'));
+            };
+            img.src = imageUrl;
         });
-      }
+    }
 
 
 
@@ -111,8 +113,8 @@ export default function Demo() {
                     <h1 className="bg-[#F5F7F7] rounded-lg text-center sm:text-[2.8rem] md:text-[3rem] leading-[1.3] font-bold mb-4 px-4 py-2">🐕 Dog vs. 🐈 Cat Classifier Demo</h1>
                     <div className="flex flex-col md:flex-row items-center">
                         <label htmlFor="fileInput"></label>
-                        <input className="w-[70%] mb-[0.3rem] md:mb-0 text-sm md:text-base flex-1 md:mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" id="fileInput" onChange={handleFileInputChange} />
-                        <button className="w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={classifyOnClick} >Classify Image</button>
+                        <input className="hover:scale-105  duration-300 w-[70%] mb-[0.3rem] md:mb-0 text-sm md:text-base flex-1 md:mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" id="fileInput" onChange={handleFileInputChange} />
+                        <button className="hover:scale-105  duration-300 w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={classifyOnClick} >Classify Image</button>
                     </div>
                 </div>
 
@@ -120,9 +122,9 @@ export default function Demo() {
                 {predictionText && <h1 className="text-center">{predictionText}</h1>}
 
                 <div className="flex justify-center mt-[2rem]">
-                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={300/168*100} alt="Dog 1" />
-                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={316/159*100} alt="Dog 2" />
-                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/cat.jpeg')} src="/images/cat.jpeg" height={100} width={225/225*100} alt="Cat 1" />
+                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={300 / 168 * 100} alt="Dog 1" />
+                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={316 / 159 * 100} alt="Dog 2" />
+                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/cat.jpeg')} src="/images/cat.jpeg" height={100} width={225 / 225 * 100} alt="Cat 1" />
                 </div>
 
             </div>
