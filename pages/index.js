@@ -21,7 +21,7 @@ export default function Home({ allPostsData }) {
         <title>{siteTitle}</title>
       </Head>
       <header className="flex flex-col items-center bg-[#F5F7F7] rounded p-8 hover:scale-105 transform transition-transform duration-300">
-        <h1 className="text-[#2F6EEB] text-[2.6rem] md:text-[3.6rem] font-bold ">🧑‍💻  {siteTitle}</h1>
+        <h1 className=" text-[2.6rem] md:text-[3.6rem] font-bold ">🧑‍💻  {siteTitle}</h1>
         <section className="mt-5">
           <p>Hi there! 👋 My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍</p>
           {/* <Link href="/about_me">Learn more about me!</Link> */}
@@ -33,7 +33,7 @@ export default function Home({ allPostsData }) {
         <u1 className="list-none">
           {allPostsData.map(post => (
             <li className="mt-[1.25rem]" key={post.id}>
-              <Link  href={`/posts/${post.id}`}> {post.title}</Link>
+              <Link  className="text-[#0070f3]" href={`/posts/${post.id}`}> {post.title}</Link>
               <br />
               <div className="text-gray-600">
                 <Date dateString={post.date} />
@@ -43,11 +43,11 @@ export default function Home({ allPostsData }) {
         </u1>
       </section>
 
-      <section className='bg-[#F5F7F7] rounded p-2 my-4 hover:scale-105 transform transition-transform duration-300'>
+      <section className='bg-[#F5F7F7] rounded p-2 mt-4 hover:scale-105 transform transition-transform duration-300'>
         <h2 className="text-[1.5rem] leading-[1.4]">💾 Project Demos</h2>
         <u1 className="list-none">
           <li className="mt-[1.25rem]">
-            <Link href="Dog_Cat_Classifier_Demo"> 🐕 Dog vs. 🐈 Cat Classifier Demo</Link>
+            <Link className="text-[#0070f3]" href="Dog_Cat_Classifier_Demo"> 🐕 Dog vs. 🐈 Cat Classifier Demo</Link>
             <br />
             <div className="text-gray-600">
               <Date dateString="2023-05-03" />
