@@ -23,7 +23,7 @@ export default function Layout({ children, home }) {
 
       {!home && (
         <div className="text-[#0070f3] mt-[3rem]">
-          <Link href="/">← Back to home</Link>
+          <Link href="/">🔙 Back to home</Link>
         </div>
       )}
     </div>

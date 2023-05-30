@@ -11,7 +11,5 @@ So, I aim to provide in-depth guidance alongside the video thru additional expla
 
 If you have no foundation in machine learning, I recommend going through [fast.ai's Practical Deep Learning course Part 1](https://course.fast.ai/) before continuing this article. It offers a good introduction to deep learning (stochastic gradient descnet, embeddings, process of training a model). In this walkthrough article, I assume you have a basic understanding of machine learning, but not enough to follow Karparthy's video independently!
 
-```Python
-print("lets get started :)")
-```
+TO BE CONTINUED ->
 
