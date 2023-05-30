@@ -20,7 +20,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <header className="flex flex-col items-center bg-[#F5F7F7] rounded p-8 hover:scale-105  duration-300">
+      <header className="flex flex-col items-center bg-[#F5F7F7] shadow-md rounded-lg p-8 hover:scale-105  duration-300">
         <h1 className=" text-[2.2rem] md:text-[4.2rem] font-bold ">🧑‍💻  {siteTitle}</h1>
         <section className="mt-5">
           
@@ -29,7 +29,7 @@ export default function Home({ allPostsData }) {
         </section>
       </header>
 
-      <section className='bg-[#F5F7F7] rounded p-2 my-4 hover:scale-105  duration-300'>
+      <section className='bg-[#F5F7F7] shadow-md rounded p-2 my-4 hover:scale-105  duration-300'>
         <h2 className="text-[1.5rem] leading-[1.4]">📠 Blogs</h2>
         <u1 className="list-none">
           {allPostsData.map(post => (
@@ -47,7 +47,7 @@ export default function Home({ allPostsData }) {
         </u1>
       </section>
 
-      <section className='bg-[#F5F7F7] rounded p-2 mt-4 hover:scale-105  duration-300'>
+      <section className='bg-[#F5F7F7] shadow-md rounded p-2 mt-4 hover:scale-105  duration-300'>
         <h2 className="text-[1.5rem] leading-[1.4]">💾 Project Demos</h2>
         <u1 className="list-none">
           <li className="mt-[1.25rem] leading-2">

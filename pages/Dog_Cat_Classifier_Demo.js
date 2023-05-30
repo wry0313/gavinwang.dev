@@ -110,7 +110,7 @@ export default function Demo() {
             </Head>
             <div className="flex flex-col item-center">
                 <div className="mx-auto">
-                    <h1 className="bg-[#F5F7F7] rounded-lg text-center sm:text-[2.8rem] md:text-[3rem] leading-[1.3] font-bold mb-4 px-4 py-2">🐕 Dog vs. 🐈 Cat Classifier Demo</h1>
+                    <h1 className="bg-[#F5F7F7] shadow rounded-lg text-center sm:text-[2.8rem] md:text-[3rem] leading-[1.3] font-bold mb-4 px-4 py-2">🐕 Dog vs. 🐈 Cat Classifier Demo</h1>
                     <div className="flex flex-col md:flex-row items-center">
                         <label htmlFor="fileInput"></label>
                         <input className="hover:scale-105  duration-300 w-[70%] mb-[0.3rem] md:mb-0 text-sm md:text-base flex-1 md:mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" id="fileInput" onChange={handleFileInputChange} />
@@ -121,10 +121,12 @@ export default function Demo() {
                 {imageUrl && <Image src={imageUrl} alt="selected pic" height={288} width={288} className="mt-[2rem] mx-auto rounded-lg shadow" />}
                 {predictionText && <h1 className="text-center">{predictionText}</h1>}
 
-                <div className="flex justify-center mt-[2rem]">
+                <div className="flex justify-center mt-[2rem] overflow-x-scroll bg-[#F5F7F7] shadow rounded-lg py-4 pl-[210px]">
                     <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={300 / 168 * 100} alt="Dog 1" />
                     <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={316 / 159 * 100} alt="Dog 2" />
                     <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/cat.jpeg')} src="/images/cat.jpeg" height={100} width={225 / 225 * 100} alt="Cat 1" />
+                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/funny.jpeg')} src="/images/funny.jpeg" height={100} width={310/163 * 100} alt="Cat or Dog? 1" />
+                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/funny1.jpeg')} src="/images/funny1.jpeg" height={100} width={1200/1200 * 100} alt="Cat or Dog> 2" />
                 </div>
 
             </div>
