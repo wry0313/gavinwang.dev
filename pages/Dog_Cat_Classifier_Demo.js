@@ -19,16 +19,28 @@ export default function Demo() {
         }
     }
 
-    async function processImage() {
-        if (imageUrl != null) {
-            setPredictionText("trying very hard to classify...")
-            const prediction = await classifyImage(imageUrl);
-            setPredictionText(formatPrediction(prediction));
-        } else {
-            setPredictionText("please upload an image first before clicking the button")
-        }
+    async function handleImageClick(imageUrl) {
+        const blob = await imageToBlob(imageUrl);
+        const dataUrl = await dataUrlFromFile(blob);
+        setPredictionText("click \"classify image\" button to start classifying")
+        setImageUrl(dataUrl);
     }
 
+
+    function imageToBlob(imageUrl) {
+        return new Promise((resolve, reject) => {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                resolve(xhr.response);
+            };
+            xhr.onerror = function () {
+                reject(new Error('Failed to convert image to Blob.'));
+            };
+            xhr.open('GET', imageUrl);
+            xhr.responseType = 'blob';
+            xhr.send();
+        });
+    }
     async function dataUrlFromFile(file) {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -52,6 +64,16 @@ export default function Demo() {
         return fetch(request).then(response => response.json());
     }
 
+    async function classifyOnClick() {
+        if (imageUrl != null) {
+            setPredictionText("sending image to huggingface server to classify...")
+            const prediction = await classifyImage(imageUrl);
+            setPredictionText(formatPrediction(prediction));
+        } else {
+            setPredictionText("please upload an image first before clicking the button")
+        }
+    }
+
     function formatAsPercentage(number, digits) {
         return (number * 100).toFixed(digits) + "%";
     }
@@ -60,10 +82,6 @@ export default function Demo() {
         const predictionData = prediction.data[0];
         const confidence = predictionData.confidences[0]['confidence']
         return `${predictionData.label}: ${formatAsPercentage(confidence, 2)} confidence`;
-    }
-
-    function handleImageClick(imageUrl) {
-        setImageUrl(imageUrl);
     }
 
 
@@ -79,7 +97,7 @@ export default function Demo() {
                     <h1 className="text-center text-[2rem] sm:text-[2.8rem] md:text-[3.2rem]  leading-[1.3] font-bold mb-4">🐕 Dog vs. 🐈 Cat Classifier Demo</h1>
                     <div className="flex flex-col md:flex-row items-center">
                         <input className="w-[70%] mb-[0.3rem] md:mb-0 text-sm md:text-base flex-1 md:mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" onChange={handleFileInputChange} />
-                        <button className="w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={processImage} >Classify Image</button>
+                        <button className="w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={classifyOnClick} >Classify Image</button>
                     </div>
                 </div>
 
@@ -87,8 +105,9 @@ export default function Demo() {
                 {predictionText && <h1 className="text-center">{predictionText}</h1>}
 
                 <div className="flex justify-center mt-[2rem]">
-                    <Image onClick={() => handleImageClick('/images/dog1.png')} className="rounded mr-2" src="/images/dog1.png" width={100} height={100} alt="Dog 1" />
-                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" width={100} height={100} alt="Dog 2" />
+                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={150} alt="Dog 1" />
+                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={150} alt="Dog 2" />
+                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/cat.png')} src="/images/cat.png" height={100} width={100} alt="Cat 1" />
                 </div>
 
             </div>
