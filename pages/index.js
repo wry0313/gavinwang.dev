@@ -23,7 +23,8 @@ export default function Home({ allPostsData }) {
       <header className="flex flex-col items-center bg-[#F5F7F7] rounded p-8 hover:scale-105 transform transition-transform duration-300">
         <h1 className=" text-[3rem] md:text-[4.2rem] font-bold ">🧑‍💻  {siteTitle}</h1>
         <section className="mt-5">
-          <p>Hi there! 👋 My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍</p>
+          
+          <p>Hi there! 👋 My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍️</p>
           {/* <Link href="/about_me">Learn more about me!</Link> */}
         </section>
       </header>
@@ -49,13 +50,12 @@ export default function Home({ allPostsData }) {
       <section className='bg-[#F5F7F7] rounded p-2 mt-4 hover:scale-105 transform transition-transform duration-300'>
         <h2 className="text-[1.5rem] leading-[1.4]">💾 Project Demos</h2>
         <u1 className="list-none">
-          <li className="mt-[1.25rem]">
+          <li className="mt-[1.25rem] leading-2">
             <Link className="text-[#0070f3]" href="Dog_Cat_Classifier_Demo"> 🐕 Dog vs. 🐈 Cat Classifier Demo</Link>
-            <br />
-            <div className="text-gray-600">
+            <div className="text-gray-600 text-base">
               <Date dateString="2023-05-03" />
             </div>
-
+            <p className='text-gray-600 text-base'> Web demo of a ResNet model: Classifies uploaded images as cats or dogs with probability scores</p>
           </li>
         </u1>
       </section>

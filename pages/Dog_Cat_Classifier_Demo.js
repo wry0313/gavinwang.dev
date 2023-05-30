@@ -65,11 +65,17 @@ export default function Demo() {
         return `${predictionData.label}: ${formatAsPercentage(confidence, 2)} confidence`;
     }
 
+    async function handleImageClick(imageUrl) {
+        // const dataUrl = await dataUrlFromFile(imageUrl);
+        setImageUrl(imageUrl);
+    }
+
+
     return (
         <Layout>
 
             <Head>
-                <title>og vs. Cat Classifyer</title>
+                <title>Dog vs. Cat Classifyer</title>
             </Head>
             <div className="flex flex-col item-center">
 
@@ -77,16 +83,25 @@ export default function Demo() {
                     <h1 className="text-center text-[2rem] sm:text-[2.8rem] md:text-[3.2rem]  leading-[1.3] font-bold mb-4">🐕 Dog vs. 🐈 Cat Classifier Demo</h1>
                     <div className="flex flex-col md:flex-row items-center">
                         <input className="w-[70%] mb-[0.3rem] md:mb-0 text-sm md:text-base flex-1 md:mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" onChange={handleFileInputChange} />
-                        <button className="w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={processImage} >Classify Image</button> 
+                        <button className="w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={processImage} >Classify Image</button>
                     </div>
                 </div>
                 <div >
-                {imageUrl && <Image src={imageUrl} height={288} width={288} alt="" className="my-[1rem] mx-auto rounded-lg shadow" />}
+                    {imageUrl && <Image src={imageUrl} height={288} width={288} alt="uploaded/selected picture" className="my-[1rem] mx-auto rounded-lg shadow" />}
                 </div>
                 <div >
                     {predictionText && <h1 className="my-[1rem] text-center">{predictionText}</h1>}
                 </div>
-        
+
+                <div className="flex justify-center mt-8">
+                    <div className="mr-2" onClick={() => handleImageClick('/dog1.png')}>
+                        <Image src="/images/dog1.png" width={100} height={100} alt="Dog 1" />
+                    </div>
+                    <div className="mx-2" onClick={() => handleImageClick('/dog2.png')}>
+                        <Image src="/images/dog2.png" width={100} height={100} alt="Dog 2" />
+                    </div>
+                </div>
+
             </div>
         </Layout>
     );
