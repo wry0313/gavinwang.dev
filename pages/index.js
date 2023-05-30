@@ -33,10 +33,13 @@ export default function Home({ allPostsData }) {
         <u1 className="list-none">
           {allPostsData.map(post => (
             <li className="mt-[1.25rem]" key={post.id}>
-              <Link  className="text-[#0070f3]" href={`/posts/${post.id}`}> {post.title}</Link>
+              <Link className="text-[#0070f3]" href={`/posts/${post.id}`}> {post.title}</Link>
               <br />
-              <div className="text-gray-600">
+              <div className="text-gray-600 text-base">
                 <Date dateString={post.date} />
+                <div className='text-sm'>
+                  {post.wordCount} words est. {post.readTime} minutes
+                </div>
               </div>
             </li>
           ))}
