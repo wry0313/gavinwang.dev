@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 const classificationEndpoint = "https://hf.space/embed/jph00/testing/+/api/predict/"
 
+
 export default function Demo() {
     const [imageUrl, setImageUrl] = useState(null);
     const [predictionText, setPredictionText] = useState("");
@@ -84,6 +85,21 @@ export default function Demo() {
         return `${predictionData.label}: ${formatAsPercentage(confidence, 2)} confidence`;
     }
 
+    async function getWidth(imageUrl) {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => {
+            const width = img.width;
+            resolve(width);
+          };
+          img.onerror = () => {
+            reject(new Error('Failed to load image.'));
+          };
+          img.src = imageUrl;
+        });
+      }
+
+
 
     return (
         <Layout>
@@ -103,9 +119,9 @@ export default function Demo() {
                 {predictionText && <h1 className="text-center">{predictionText}</h1>}
 
                 <div className="flex justify-center mt-[2rem]">
-                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={150} alt="Dog 1" />
-                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={150} alt="Dog 2" />
-                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/cat.jpeg')} src="/images/cat.jpeg" height={100} width={100} alt="Cat 1" />
+                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={300/168*100} alt="Dog 1" />
+                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={316/159*100} alt="Dog 2" />
+                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/cat.jpeg')} src="/images/cat.jpeg" height={100} width={225/225*100} alt="Cat 1" />
                 </div>
 
             </div>

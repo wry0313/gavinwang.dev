@@ -19,7 +19,7 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
       </Head>
 
-      <main>{children}</main>
+      <main >{children}</main>
 
       {!home && (
         <div className="text-[#0070f3] mt-[2rem]">
