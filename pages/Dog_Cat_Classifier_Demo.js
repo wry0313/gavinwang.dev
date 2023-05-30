@@ -20,12 +20,9 @@ export default function Demo() {
     }
 
     async function processImage() {
-        // replace this with your own image processing logic
-        // console.log('Processing image:', image);
         if (imageUrl != null) {
             setPredictionText("trying very hard to classify...")
             const prediction = await classifyImage(imageUrl);
-            // console.log(prediction);
             setPredictionText(formatPrediction(prediction));
         } else {
             setPredictionText("please upload an image first before clicking the button")
@@ -65,8 +62,7 @@ export default function Demo() {
         return `${predictionData.label}: ${formatAsPercentage(confidence, 2)} confidence`;
     }
 
-    async function handleImageClick(imageUrl) {
-        // const dataUrl = await dataUrlFromFile(imageUrl);
+    function handleImageClick(imageUrl) {
         setImageUrl(imageUrl);
     }
 
@@ -86,20 +82,13 @@ export default function Demo() {
                         <button className="w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={processImage} >Classify Image</button>
                     </div>
                 </div>
-                <div >
-                    {imageUrl && <Image src={imageUrl} height={288} width={288} alt="uploaded/selected picture" className="my-[1rem] mx-auto rounded-lg shadow" />}
-                </div>
-                <div >
-                    {predictionText && <h1 className="my-[1rem] text-center">{predictionText}</h1>}
-                </div>
 
-                <div className="flex justify-center mt-8">
-                    <div className="mr-2" onClick={() => handleImageClick('/dog1.png')}>
-                        <Image src="/images/dog1.png" width={100} height={100} alt="Dog 1" />
-                    </div>
-                    <div className="mx-2" onClick={() => handleImageClick('/dog2.png')}>
-                        <Image src="/images/dog2.png" width={100} height={100} alt="Dog 2" />
-                    </div>
+                {imageUrl && <Image src={imageUrl} alt="selected pic" height={288} width={288} className="mt-[2rem] mx-auto rounded-lg shadow" />}
+                {predictionText && <h1 className="text-center">{predictionText}</h1>}
+
+                <div className="flex justify-center mt-[2rem]">
+                    <Image onClick={() => handleImageClick('/images/dog1.png')} className="rounded mr-2" src="/images/dog1.png" width={100} height={100} alt="Dog 1" />
+                    <Image className="mx-2 rounded-lg" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" width={100} height={100} alt="Dog 2" />
                 </div>
 
             </div>
