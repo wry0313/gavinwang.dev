@@ -121,14 +121,15 @@ export default function Demo() {
                 {imageUrl && <Image src={imageUrl} alt="selected pic" height={288} width={288} className="mt-[2rem] mx-auto rounded-lg shadow" />}
                 {predictionText && <h1 className="text-center">{predictionText}</h1>}
 
-                <div className="flex justify-center mt-[2rem] overflow-x-scroll bg-[#F5F7F7] shadow rounded-lg py-4 pl-[210px]">
-                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={300 / 168 * 100} alt="Dog 1" />
-                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={316 / 159 * 100} alt="Dog 2" />
-                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/cat.jpeg')} src="/images/cat.jpeg" height={100} width={225 / 225 * 100} alt="Cat 1" />
-                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/funny.jpeg')} src="/images/funny.jpeg" height={100} width={310/163 * 100} alt="Cat or Dog? 1" />
-                    <Image className="mx-2 rounded-lg hover:scale-110  duration-300" onClick={() => handleImageClick('/images/funny1.jpeg')} src="/images/funny1.jpeg" height={100} width={1200/1200 * 100} alt="Cat or Dog> 2" />
+                <div className="flex mt-[2rem] overflow-x-scroll bg-[#F5F7F7] shadow rounded-lg py-2">
+                    <Image className="flex-none ml-2 mr-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={(300 / 168) * 100} alt="Dog 1" />
+                    <Image className="flex-none mx-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={(316 / 159) * 100} alt="Dog 2" />
+                    <Image className="flex-none mx-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/cat.jpeg')} src="/images/cat.jpeg" height={100} width={(225 / 225) * 100} alt="Cat 1" />
+                    <Image className="flex-none mx-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/funny.jpeg')} src="/images/funny.jpeg" height={100} width={(310 / 163) * 100} alt="Cat or Dog? 1" />
+                    <Image className="flex-none mx-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/funny1.jpeg')} src="/images/funny1.jpeg" height={100} width={(1200 / 1200) * 100} alt="Cat or Dog 2" />
+                    <Image className="flex-none mx-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/funny3.jpg')} src="/images/funny3.jpg" height={100} width={(390 / 291) * 100} alt="Cat or Dog 3" />
+                    <Image className="flex-none mr-2 ml-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/fox.jpeg')} src="/images/fox.jpeg" height={100} width={(1200 / 862) * 100} alt="Fox" />
                 </div>
-
             </div>
         </Layout>
     );
