@@ -121,7 +121,7 @@ export default function Demo() {
                 {imageUrl && <Image src={imageUrl} alt="selected pic" height={288} width={288} className="mt-[2rem] mx-auto rounded-lg shadow" />}
                 {predictionText && <h1 className="text-center">{predictionText}</h1>}
 
-                <div className="flex mt-[2rem] overflow-x-scroll bg-[#F5F7F7] shadow rounded-lg py-2">
+                <div className="no-scrollbar flex mt-[2rem] overflow-x-scroll bg-[#F5F7F7] shadow rounded-lg py-2">
                     <Image className="flex-none ml-2 mr-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/dog1.png')} src="/images/dog1.png" height={100} width={(300 / 168) * 100} alt="Dog 1" />
                     <Image className="flex-none mx-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/dog2.png')} src="/images/dog2.png" height={100} width={(316 / 159) * 100} alt="Dog 2" />
                     <Image className="flex-none mx-1 rounded-lg hover:scale-110 duration-300" onClick={() => handleImageClick('/images/cat.jpeg')} src="/images/cat.jpeg" height={100} width={(225 / 225) * 100} alt="Cat 1" />

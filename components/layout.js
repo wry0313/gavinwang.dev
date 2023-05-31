@@ -22,8 +22,8 @@ export default function Layout({ children, home }) {
       <main >{children}</main>
 
       {!home && (
-        <div className="text-[#0070f3]  mt-[2rem] mb-[8rem] hover:scale-110 duration-300">
-          <Link className="bg-[#F5F7F7] p-2 rounded-lg shadow" href="/">🔙 Back to home</Link>
+        <div className="mt-[2rem] mb-[8rem] hover:scale-110 duration-300">
+          <Link className="text-[#0070f3] bg-[#F5F7F7] p-2 rounded-lg shadow" href="/">🔙 Back to home</Link>
         </div>
       )}
     </div>
