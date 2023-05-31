@@ -72,6 +72,8 @@ function printMap(map) {
   });
 }
 ```
+
+I didn't realize this until much later (after I already published the extension on the web store)
 Now that the time tracking is working, the next challenge is connecting the Chrome extension to the ChatGPT server. Having no clue, I turned to ChatGPT itself for advice. In response, ChatGPT suggested a solution that involved having users input their OpenAI access token, which would enable the extension to establish a connection with the OpenAI server. Sadly, this approach is not feasible as it requires money to get an access token, and no one's paying for that just to use my extension.
 
 When I raised the concern that extension users may not have API access tokens, ChatGPT presented me with three alternative options:
@@ -87,9 +89,17 @@ Anyways to make option 1 work, I tried asking ChatGPT. But it yielded nothing as
 
 So if I could figure out how this extension works, I can apply its code to my own project! I tried using [Chrome extension source viewer](https://chrome.google.com/webstore/detail/chrome-extension-source-v/jifpbeccnghkjeaalbbjmodiffmgedin), which honestly felt kind of unethical. It didn't work, as it outputted a jumble mess of code with no apparent meaning, and the only thing I could decipher out of it was that it used the fetch() function and somehow was able to get my access token to the OpenAI server. Then I thought maybe I can find an extension project that uses ChatGPT, and maybe the creator would be kind enough to open-source it. Luckily, I found one: [ChatGPT for Google](https://chatgpt4google.com/), an extension that shows ChatGPT responses alongside normal search engine results, and their entire project was entirely open source! [wong2/chatgpt-google-extension](https://github.com/wong2/chatgpt-google-extension). 
 
-The next couple of days was me vs the chatgpt for google github repo. I spent painstakingly amout of time reading every single line of code in the src folder. I learned that the basic whole functionality resides in the [chatgpt.ts file](https://github.com/wong2/chatgpt-google-extension/blob/main/src/background/providers/chatgpt.ts). And just like everything about coding, I quickly encountered some problems. 
+The next couple of days was me vs the chatgpt for google github repo. I spent painstakingly amout of time reading every single line of code in the src folder. I learned that most of the chatGPT communication functionality resides in the [chatgpt.ts file](https://github.com/wong2/chatgpt-google-extension/blob/main/src/background/providers/chatgpt.ts). But just like everything about coding, I quickly encountered some problems. 
 
 1. the file was written in .ts which I never learened before. Solution: .ts is very similar to .js so I was able to get the hang of it pretty quick
 2. the file uses external libraries such as 'expiry-map' and 'uuid'. and when I install these librarys using npm, import them in the code, and load the extension, the browswer was unable to access the libraries which were in the development directory. So I needed a way to bundle the libraries with the extension. Solution: Luckily I was able to get everything working after following through a fantastic video on how to set up a chrome extension with a technology called Webpack which allowed me to bundle everything together: [Build a Chrome Extension With React & Webpack](https://www.youtube.com/watch?v=8OCEfOKzpAw)
+3. the file imported many other files in the github repo, which meant that if i want to use the chatgpt functionality, I also have to copy and paste all the other files. Solution: I did exactly just that.
 
 After a couple days of work, I was able to basically implement the chatgpt communication feature to my budding extesnion. The basic logic is to make HTTP requests to the ChatGPT web version API (which does not have a public documentation), it will get your browser's access token to ChatGPT through the link: [https://chat.openai.com/api/auth/session](https://chat.openai.com/api/auth/session) and stores it in a cache. After that it will use the stored access token and use it to communicate with chatgpt's web server. One thing to note is that ChatGPT uses SSE to send info. It stands for Server-Sent Events which enables the server to push data to client over a single HTTP connection rather than constantly making such connections. This is useful for use cases such as real-time stock price update and score update for sports. In the case of chatgpt, it constantly send events for every single word that chatGPT generates so the user can see the answer being constructed in real time.
+![](/article/sse.gif)
+
+Now that I can form connections to the ChatGPT server, it is time to think of a prompt that will do what my extension is thought out to do. After some trial and error, I landed on this one: 
+
+"in the perspective of a mentor to allow the user to understand what the user's focus is on and what the user roughly accomplished today. limit to 100-200 words and make necessary suggestions on what to do to make user improve and also give a productivity rating out of 100: " and after this I would concatinate a string representation of the user's website usage. 
+
+Okay now I have all the background script working, it
