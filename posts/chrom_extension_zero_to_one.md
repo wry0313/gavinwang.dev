@@ -74,7 +74,7 @@ Lastly, I wanted my extension to have an appealing visual design, so I turned to
 
 ![Mentor GPT showcase](/article/GPT_Mentor_Showcase.png)
 
-The process of publishing the extension turned out to be surprisingly easy, thanks to Google's Chrome Web Store developer dashboard. With its help, I was able to publish my extension within just one day. One important aspect I learned about during the publishing process was the requirement of creating a privacy policy for the product. You can find the privacy policy for my extension at [Mentor GPT Privacy Policy Wiki] (https://github.com/wry0313/GPT_mentor_extension/wiki/Privacy-Policy).
+The process of publishing the extension turned out to be surprisingly easy, thanks to Google's Chrome Web Store developer dashboard. With its help, I was able to publish my extension within just one day. One important aspect I learned about during the publishing process was the requirement of creating a privacy policy for the product. You can find the privacy policy for my extension at [Mentor GPT Privacy Policy Wiki](https://github.com/wry0313/GPT_mentor_extension/wiki/Privacy-Policy).
 
 Now, if you've actually managed to read through all of this, you must be truly dedicated! Thank you so much. I would greatly appreciate it if you could check out my extension on the Chrome Web Store and, if you find it useful, leave a positive review at: [GPT Mentor](https://chrome.google.com/webstore/detail/gpt-mentor/bmlbikjekoeckeopfnokkafbohkdfggm).
 
