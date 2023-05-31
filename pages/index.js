@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import Layout, { siteTitle } from '../components/layout';
+
+import Layout from '../components/layout';
 import Link from 'next/link';
 import Date from '../components/date';
 
@@ -20,15 +20,15 @@ export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>gavinwang.dev</title>
       </Head>
       
       <header className="flex flex-col items-center bg-[#F5F7F7] shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
-        <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold">🧑‍💻 {siteTitle}</h1>
+        <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold">🧑‍💻 gavinwang.dev</h1>
         <section id="self-introduction">
           <p className="inline">Hi there! </p>
           <div className="inline-block animate-wiggle text-[1.5rem]"> 👋 </div>
-          <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍️</p>
+          <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things about coding 💻 on this blog site ✍️</p>
         </section>
       </header>
 

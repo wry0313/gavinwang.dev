@@ -16,7 +16,7 @@ export default function Layout({ children, home }) {
           name="description"
           content="gavin wang personal dev site"
         />
-        <meta name="og:title" content={siteTitle} />
+        <meta name="og:title" content="gavinwang.dev" />
       </Head>
 
       <main >{children}</main>
