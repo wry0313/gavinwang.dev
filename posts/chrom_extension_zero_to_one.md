@@ -1,5 +1,5 @@
 ---
-title: '🧑‍🏭 How I Build a Chrome Extension Without Pior Knowledge'
+title: '🧑‍🏭 How I Build a Chrome Extension With no Pior Knowledge'
 date: '2023-05-29'
 ---
 
@@ -100,6 +100,10 @@ After a couple days of work, I was able to basically implement the chatgpt commu
 
 Now that I can form connections to the ChatGPT server, it is time to think of a prompt that will do what my extension is thought out to do. After some trial and error, I landed on this one: 
 
-"in the perspective of a mentor to allow the user to understand what the user's focus is on and what the user roughly accomplished today. limit to 100-200 words and make necessary suggestions on what to do to make user improve and also give a productivity rating out of 100: " and after this I would concatinate a string representation of the user's website usage. 
+"in the perspective of a mentor mentor, help the user to understand what the user's focus is on and what the user roughly accomplished today. limit to 100-200 words and make necessary suggestions on what to do to make user improve and also give a productivity rating out of 100:" 
+
+and after this I would concatinate a string representation of the user's website usage. The output would look something like this: 
+
+> Today, your focus seems to be on web development, particularly exploring topics related to Chrome extensions, CSS, and React. You spent time on Stack Overflow, seeking assistance on adding a GIF to a Markdown file. It's great that you're utilizing online resources to find solutions to specific challenges. You also engaged with various learning materials, including YouTube tutorials on building Chrome extensions and GPT from scratch. Additionally, you visited developer websites, explored web developer portfolios for inspiration, and searched for random number generators and Tailwind CSS-related topics. In terms of personal projects, you spent time on your own website, gavinwang.dev, and worked on a Dog vs. Cat Classifier. You also visited your GitHub repositories and explored how to build a random quote generator app with React and Tailwind CSS. It seems you also took some time to read articles on Medium, particularly from authors such as Sracha and Gavin Wang. To improve your productivity, I suggest setting specific goals for your web development projects and allocating time for focused coding sessions. Consider documenting your progress and learnings in a personal journal or blog. Additionally, try to actively engage with coding communities and seek feedback on your projects. Keep up the good work! Productivity rating: 85/100
 
 Okay now I have all the background script working, it
