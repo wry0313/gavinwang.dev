@@ -29,7 +29,7 @@ export default function Home({ allPostsData }) {
 
       <header className="flex flex-col bg-[#F5F7F7] shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
       <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
-      🧑‍💻<TypewriterAnimation text="gavinwang.dev" speed="400" />
+      {/* 🧑‍💻<TypewriterAnimation text="gavinwang.dev" speed="400" /> */}
       </h1>
       <section id="self-introduction">
           <p className="inline">Hi there! </p>
@@ -62,7 +62,7 @@ export default function Home({ allPostsData }) {
         <h2 className="text-[1.5rem] leading-[1.4]">💾 Project Demos</h2>
         <ul className="list-none">
           <li className="mt-[1.25rem] leading-2">
-            <Link className="text-[#0070f3]" href="/dog_cat_classifier_demo">
+            <Link className="text-[#0070f3]" href="dog_cat_classifier_demo">
               🐕 Dog vs. 🐈 Cat Classifier Demo
             </Link>
             <div className="text-gray-600 text-base">
