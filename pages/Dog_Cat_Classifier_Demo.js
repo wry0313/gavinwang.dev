@@ -110,11 +110,11 @@ export default function Demo() {
             </Head>
             <div className="flex flex-col item-center">
                 <div className="mx-auto">
-                    <h1 className="bg-[#F5F7F7] shadow rounded-lg text-center sm:text-[2.8rem] md:text-[3rem] leading-[1.3] font-bold mb-4 px-4 py-2">🐕 Dog vs. 🐈 Cat Classifier Demo</h1>
+                    <h1 className=" bg-[#F5F7F7] shadow rounded-lg text-center sm:text-[3.2rem] leading-[1.3] font-bold mb-4 px-4 py-2">🐕 Dog vs. 🐈 Cat Classifier Demo</h1>
                     <div className="flex flex-col md:flex-row items-center">
                         <label htmlFor="fileInput"></label>
-                        <input className="hover:scale-105  duration-300 w-[70%] mb-[0.3rem] md:mb-0 text-sm md:text-base flex-1 md:mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" id="fileInput" onChange={handleFileInputChange} />
-                        <button className="hover:scale-105  duration-300 w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={classifyOnClick} >Classify Image</button>
+                        <input className="hover:scale-105  duration-300 w-[250px] md:w-[70%] mb-[0.3rem] md:mb-0 text-sm md:text-base flex-1 md:mr-[0.4rem] h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" type="file" id="fileInput" onChange={handleFileInputChange} />
+                        <button className="hover:scale-105  duration-300 w-[250px] md:w-[70%] text-sm md:text-base flex-1 h-12 hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-200 rounded shadow" onClick={classifyOnClick} >Classify Image</button>
                     </div>
                 </div>
 
