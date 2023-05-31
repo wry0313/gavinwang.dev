@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 export default function TypewriterAnimation(props) {
     const [currentText, setCurrentText] = useState('');
     const text = props.text;
+    const speed = props.speed;
 
     useEffect(() => {
         const typeWriter = (i) => {
@@ -10,7 +11,7 @@ export default function TypewriterAnimation(props) {
                 setCurrentText(prevText => prevText + text[i]);
                 setTimeout(() => {
                     typeWriter(i + 1);
-                }, (Math.random() * 0.7 + 0.3) * 400);
+                }, (Math.random() * 0.7 + 0.3) * speed);
             } else {
                 setTimeout(() => {
                     deleteText(text.length);
