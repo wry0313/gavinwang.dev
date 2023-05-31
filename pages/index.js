@@ -62,7 +62,7 @@ export default function Home({ allPostsData }) {
         <h2 className="text-[1.5rem] leading-[1.4]">💾 Project Demos</h2>
         <ul className="list-none">
           <li className="mt-[1.25rem] leading-2">
-            <Link className="text-[#0070f3]" href="dog_cat_classifier_demo">
+            <Link className="text-[#0070f3]" href="/dog">
               🐕 Dog vs. 🐈 Cat Classifier Demo
             </Link>
             <div className="text-gray-600 text-base">

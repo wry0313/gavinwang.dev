@@ -7,6 +7,8 @@ Curious about how language models like GPT work? In this article, I'll take you 
 
 The content of this article is based on Andrej Karparthy's video [Let's build GPT: from scratch, in code, spelled out.](https://www.youtube.com/watch?v=kCc8FmEb1nY) However, I noticed that the video left some aspects unexplained, which can be frustrating for learners.
 
+[![Chatgpt From Scratch Youtube Video Link](https://i.ytimg.com/vi/kCc8FmEb1nY/hq720.jpg)](https://www.youtube.com/watch?v=kCc8FmEb1nY)
+
 So, I aim to provide in-depth guidance alongside the video thru additional explanations, diagrams, and breakdowns to ensure clarity.
 
 If you have no foundation in machine learning, I recommend going through [fast.ai's Practical Deep Learning course Part 1](https://course.fast.ai/) before continuing this article. It offers a good introduction to deep learning (stochastic gradient descnet, embeddings, process of training a model). In this walkthrough article, I assume you have a basic understanding of machine learning, but not enough to follow Karparthy's video independently!
