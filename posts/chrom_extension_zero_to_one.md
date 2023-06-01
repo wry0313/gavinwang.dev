@@ -1,5 +1,5 @@
 ---
-title: '🧑‍🏭 How I Build a Chrome Extension With no Prior Knowledge'
+title: '🧑‍🏭 How I Build a Chrome Extension with ChatGPT Functionalities'
 date: '2023-05-29'
 ---
 
@@ -72,7 +72,9 @@ To learn React, I watched YouTube tutorials on React hooks such as useState and 
 
 Lastly, I wanted my extension to have an appealing visual design, so I turned to Tailwind CSS. I had previously used Tailwind CSS for my own personal website and fell in love with its ease of use. For my extension, I opted for a cyan-to-blue gradient theme, and I'm quite pleased with the final result.
 
-![Mentor GPT showcase](/article/GPT_Mentor_Showcase.png)
+![Mentor GPT showcase 1](/article/Mentor_GPT_Showcase1.png)
+![Mentor GPT showcase 2](/article/Mentor_GPT_Showcase2.png)
+![Mentor GPT showcase 3](/article/Mentor_GPT_Showcase3.png)
 
 The process of publishing the extension turned out to be surprisingly easy, thanks to Google's Chrome Web Store developer dashboard. With its help, I was able to publish my extension within just one day. One important aspect I learned about during the publishing process was the requirement of creating a privacy policy for the product. You can find the privacy policy for my extension at [Mentor GPT Privacy Policy Wiki](https://github.com/wry0313/GPT_mentor_extension/wiki/Privacy-Policy).
 

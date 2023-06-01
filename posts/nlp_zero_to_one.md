@@ -1,5 +1,5 @@
 ---
-title: '🧑‍🔧 Building a Language Model from Scratch in Code Spelled Out Explained in Details'
+title: '🧑‍🔧 Building a Language Model from Scratch P.1'
 date: '2023-05-30'
 ---
 
@@ -12,10 +12,3 @@ The content of this article is based on Andrej Karparthy's video [Let's build GP
 So, I aim to provide in-depth guidance alongside the video thru additional explanations, diagrams, and breakdowns to ensure clarity.
 
 If you have no foundation in machine learning, I recommend going through [fast.ai's Practical Deep Learning course Part 1](https://course.fast.ai/) before continuing this article. It offers a good introduction to deep learning (stochastic gradient descnet, embeddings, process of training a model). In this walkthrough article, I assume you have a basic understanding of machine learning, but not enough to follow Karparthy's video independently!
-
-TO BE CONTINUED ->
-
-```Python
-print(1+1)
-print("hello world")
-```
