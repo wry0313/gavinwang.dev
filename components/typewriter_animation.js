@@ -15,7 +15,7 @@ export default function TypewriterAnimation(props) {
             } else {
                 setTimeout(() => {
                     deleteText(text.length);
-                }, 2000);
+                }, 3500);
             }
         };
 
@@ -24,11 +24,11 @@ export default function TypewriterAnimation(props) {
                 setCurrentText(prevText => prevText.slice(0, -1));
                 setTimeout(() => {
                     deleteText(i - 1);
-                }, (Math.random() * 0.2 + 0.3) * 100);
+                }, (Math.random() * 0.3 + 0.7) * 70);
             } else {
                 setTimeout(() => {
                     typeWriter(0);
-                }, 1500);
+                }, 3000);
             }
         };
 

@@ -2,22 +2,24 @@ import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head';
 import Date from '../../components/date'
+import ReactMarkdown from "react-markdown"
 
-export default function Post({ postData }) {
+export default function Post({ content, data }) {
+    console.log(content, data);
     return (
         <Layout>
             <Head>
-                <title>{postData.title}</title>
+                <title>{data.title}</title>
             </Head>
-            <article>
-                <h1 className="text-[2rem] leading-[1.3] font-extrabold">{postData.title}</h1>
+
+            <div>
+                <h1 className="text-[2rem] leading-[1.3] font-extrabold">{data.title}</h1>
                 <hr className="h-1 my-2 bg-gray-200 rounded"></hr>
                 <div className="text-xs font-bold mb-8">
-                    <Date dateString={postData.date} />
+                    <Date dateString={data.date} />
                 </div>
-
-                <div className="prose prose-a:text-blue-600" dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
-            </article>
+                <ReactMarkdown className="prose prose-a:text-blue-600" children={content} />            
+            </div>
         </Layout>
     );
 }
@@ -34,10 +36,11 @@ export async function getStaticPaths() {
 //getStaticProps is given params, which contains id (because the file name is [id].js).
 export async function getStaticProps({ params }) {
     // Fetch necessary data for the blog post using params.id
-    const postData = await getPostData(params.id);
+    const { content, data } = await getPostData(params.id);
+    // console.log(postData)
     return {
         props: {
-            postData,
-        },
+            content, data
+        }
     }
 }

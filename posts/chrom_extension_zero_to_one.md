@@ -1,5 +1,5 @@
 ---
-title: '🧑‍🏭 How I Build a Chrome Extension With no Pior Knowledge'
+title: '🧑‍🏭 How I Build a Chrome Extension With no Prior Knowledge'
 date: '2023-05-29'
 ---
 

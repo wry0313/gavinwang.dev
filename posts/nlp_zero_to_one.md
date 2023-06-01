@@ -15,3 +15,7 @@ If you have no foundation in machine learning, I recommend going through [fast.a
 
 TO BE CONTINUED ->
 
+```Python
+print(1+1)
+print("hello world")
+```
