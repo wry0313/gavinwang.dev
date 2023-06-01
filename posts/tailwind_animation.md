@@ -1,0 +1,127 @@
+---
+title: '💥 Intro to Tailwind CSS Animation'
+date: '2023-06-01'
+---
+
+<span className="animate-pulse bold"> Gone are the days of static and dull webpages. </span>
+ With just a few lines of code, you can add motion, transitions, and effects using CSS animations to bring your website to life. 
+
+Why did I choose CSS over other ways such as Javascript to make animations? Well, for starters, CSS animations are supported by all modern browsers, making them widely compatible. They also offer excellent performance since animations are handled by the browser's rendering engine, resulting in smooth and fluid motion. 
+
+Additionally, I will use my go-to CSS framework, [Tailwind CSS](https://tailwindcss.com/). It comes with a wide range of pre-built classes, making it a breeze to add or create animations.
+
+Here are some animations that Tailwind already provides: 
+1. **pulse**: <span className="animate-pulse"> ✨ </span>
+```html
+<span className="animate-pulse"> ✨ </span>
+```
+2. **bounce**: <span className="animate-bounce inline-block"> 🏀 </span>
+```html
+<span className="animate-bounce inline-block"> 🏀 </span>
+```
+3. **spin**: <span class="animate-spin inline-block"> ⚽️ </span>
+```html
+<span class="animate-spin inline-block"> ⚽️ </span>
+```
+4. make button **scaled** when hovered: <button class="bg-[#F5F7F7] shadow rounded-lg p-2 hover:scale-110 duration-300">
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" className="no-a-css">Click?</a>
+</button>
+
+<style>
+  .no-a-css {
+    text-decoration: none;
+    color: black;
+  }
+  .no-a-css:hover {
+    color: black;
+  }
+</style>
+
+```html
+<button className="bg-[#F5F7F7] shadow rounded-lg p-2 hover:scale-110 duration-300"> Click? </button>
+```
+`hover:scale-110` class scales the button to 110% of its original size when the hover event is triggered. The `duration-300` class sets the duration of the scaling animation to 300 milliseconds, controlling how quickly or slowly the scaling effect occurs.
+
+<style>
+  @keyframes spin {
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-spin {
+    animation: spin 2s infinite linear;
+  }
+</style>
+
+As you can see in these four simple examples, you can quickly add animations to existing HTML components with Tailwind CSS pre-built animation classes. However, say that you want to add some new animation such as making a waving hand: <span class="animate-wiggle inline-block"> 👋 </span> ?
+
+
+To do this you can simply add this to your `global.css` file: 
+```css
+  @keyframes wiggle {
+    0%, 100% {
+      transform: rotate(-20deg);
+    }
+    50% {
+      transform: rotate(20deg);
+    }
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 1s infinite ease-in-out; 
+  }
+```
+
+Frist, we defiend a keyframe called "wiggle". In CSS, a keyframe is a way to define specific points in an animation. In the above code, we have three keyframe selectors: `0%`,`50%`, and `100%` representing the starting, half-way, and ending points of the animation. At 0% of the animation, we starts at being -20° tilted. As the animation approaches 50%, it would rotate to a +20° angle. As the animation goes from 50% to 100%, it will rotate back from +20° to -20°. 
+
+Next, the css will apply the wiggle animation to any HTML tag with the `animate-wiggle` class. The animation will take 1s and it will repeat infinitely at a speed that starts slow and ends slow (denoted by `ease-in-out`).
+
+Tailwind.CSS also offers a good way to add customized animation to your `tailwind.config.js`file instead of them to the `global.css` file. 
+You can use this animation by adding the `animate-wiggle` class to your target.
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-20deg)' },
+          '50%': { transform: 'rotate(20deg)' },
+        },
+      },
+      animation: {
+         wiggle: 'wiggle 1s infinite ease-in-out',
+      }
+    },
+  },
+}
+```
+
+Now lets look at another example: how to make a animation that goes in a circular path? like this:<span className="animate-moveCircle inline-block">✍️</span>
+
+Here is the code: 
+```js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  theme: {
+    extend: {
+      keyframes: {
+        moveCircle: {
+          '0%': { transform: "rotate(0deg) translateX(4px) rotate(0deg)" },
+          '100%': { transform: "rotate(360deg) translateX(4px) rotate(-360deg)" },
+        },
+      },
+      animation: {
+        moveCircle: 'moveCircle 1.4s infinite ease-out',
+      }
+    },
+  },
+}
+```
+
+This is actually kind of tricky, so I won't attempt to explain it here. But you should definitely check out how it works [here](https://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/). Additionally this [stack overflow linkk](https://stackoverflow.com/questions/38877163/why-rotate0deg-matters?rq=1) would also help. 
+
+
+Thats it! After reading this article, you should be able to skillfully  use CSS animation and also understand how to do it with the tailwind CSS framework! Now look at your own website, and ask yourself if there are anyways to use CSS animation to bring life and interactivity—go ahead try exploring and experimenting with various animations!

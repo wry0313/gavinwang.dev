@@ -1,17 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,md}",
+    "./pages/**/*.{js,ts,jsx,tsx,md}",
+    "./components/**/*.{js,ts,jsx,tsx,md}",
+    "./posts/**/*.{js,ts,jsx,tsx,md,mdx}",
   ],
   theme: {
     extend: {
       keyframes: {
-        wiggle: {
-          '0%, 100%': { transform: 'rotate(-20deg)' },
-          '50%': { transform: 'rotate(20deg)' },
-        },
         fadeIn: {
           "0%": {
             opacity: '0',
@@ -22,9 +19,9 @@ module.exports = {
             transform: "translateY(0)"
           }
         },
-        spin: {
-          "0%": { transform: "rotate(0deg)" },
-          "100%": { transform: "rotate(360deg)" }
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-20deg)' },
+          '50%': { transform: 'rotate(20deg)' },
         },
         moveCircle: {
           '0%': { transform: "rotate(0deg) translateX(4px) rotate(0deg)" },
@@ -37,7 +34,6 @@ module.exports = {
       animation: {
         wiggle: 'wiggle 1s ease-in-out infinite',
         fadeIn: 'fadeIn 0.5s ease-out',
-        spin: 'spin 4s infinite linear',
         moveCircle: 'moveCircle 1.4s infinite ease-out',
         caret: 'caret 1.1s steps(1) infinite',
       }

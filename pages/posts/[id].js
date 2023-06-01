@@ -17,14 +17,14 @@ export default function Post({ content, data, wordCount, readTime }) {
 
             <div>
                 <h1 className="text-[2rem] leading-[1.3] font-extrabold">{data.title}</h1>
-                <hr className="h-[3.5px] my-2 bg-gray-200 rounded"></hr>
-                <div className="flex text-sm font-medium mb-8">
+                <hr className="h-[3.5px] my-2 bg-slate-300"></hr>
+                <div className="flex text-base mb-8 text-slate-500">
                     <Date dateString={data.date} />
-                    {/* <p className="ml-6"> {wordCount} words</p>
-                    <p className="ml-6"> {readTime} min read</p> */}
+                    <p className="ml-6"> {wordCount} words</p>
+                    <p className="ml-6"> {readTime} min read</p>
                 </div>
 
-                <ReactMarkdown className="prose prose-a:text-blue-600 hover:prose-a:text-blue-500 prose-pre:bg-transparent prose-pre:p-0"
+                <ReactMarkdown className="prose prose-a:text-blue-600 prose-pre:bg-transparent prose-pre:p-0 hover:prose-a:text-blue-500"
                     children={content}
                     rehypePlugins={[rehypeRaw]}
                     components={{
