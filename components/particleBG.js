@@ -70,7 +70,7 @@ export default function ParticlesBG () {
                             default: "bounce",
                         },
                         random: false,
-                        speed: 2,
+                        speed: 4,
                         straight: false,
                     },
                     number: {

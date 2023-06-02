@@ -1,44 +1,62 @@
 import React, { useEffect, useState } from 'react';
 
-export default function Typing(props) {
-    const [currentText, setCurrentText] = useState('');
-    const text = props.text;
-    const speed = props.speed;
-
+export default function Typing({ words, speed }) {
+    const [displaytext, setDisplayText] = useState('');
+    const [forward, setForward] = useState(true);
+    const [wordIdx, setWordIdx] = useState(0)
+    const [currentText, setCurrentText] = useState(words[0]);
+    const [idx, setIdx] = useState(0)
     useEffect(() => {
-        const typeWriter = (i) => {
-            if (i < text.length) {
-                setCurrentText(prevText => prevText + text[i]);
-                setTimeout(() => {
-                    typeWriter(i + 1);
-                }, (Math.random() * 0.7 + 0.3) * speed);
-            } else {
-                setTimeout(() => {
-                    deleteText(text.length);
-                }, 3500);
-            }
-        };
 
-        const deleteText = (i) => {
-            if (i > 0) {
-                setCurrentText(prevText => prevText.slice(0, -1));
+        const type = () => {
+            if (wordIdx < words.length) {
+
+                if (idx < currentText.length) {
+
+                    setTimeout(() => {
+                        setIdx(prevIdx => prevIdx + 1)
+                        setDisplayText(prevText => prevText + currentText[idx])
+                    }, (Math.random() * 0.7 + 0.3) * speed);
+                } else {
+                    setTimeout(() => {
+                        setForward(false);
+                    }, 3000)
+                }
+            }
+        }
+        const backspace = () => {
+            if (idx > 0) {
                 setTimeout(() => {
-                    deleteText(i - 1);
+                    setIdx(prevIdx => prevIdx - 1)
+                    setDisplayText(prevText => prevText.slice(0, -1))
                 }, 70);
             } else {
                 setTimeout(() => {
-                    typeWriter(0);
-                }, 3000);
+                    setForward(true);
+                    if (wordIdx+1 < words.length) {
+                        setWordIdx(wordIdx + 1)
+                        setCurrentText(words[wordIdx+1])
+                    } else {
+                        setWordIdx(0)
+                        setCurrentText(words[0])
+                    }
+                }, 2500)
             }
-        };
+        }
 
-        typeWriter(0);
-    }, []);
+
+        if (forward) {
+            type();
+        } else {
+            backspace();
+        }
+
+    }, [displaytext, forward]);
 
     return (
         <div className="flex items-center">
-            <h1>{currentText}</h1>
-            <span className={`h-[75%] border-r-[2.5px] md:border-r-[3px] border-solid border-black ${currentText.length === text.length | currentText.length === 0 ? 'animate-caret' : ''}`}></span>
+            <h1>{displaytext}</h1>
+            <span className={`group-hover:border-white h-[75%] border-r-[2.5px] md:border-r-[3px] border-solid border-black ${displaytext.length === currentText.length | displaytext.length === 0 ? 'animate-caret' : ''}`}></span>
         </div>
     );
 }
