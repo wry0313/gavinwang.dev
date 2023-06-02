@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,md}",
@@ -8,6 +9,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'black': '#222222',
+        'white': 'ffffff',
+        'lapis': '#1c5d99',
+        'moonstone': '#639fab',
+        'powder': '#bbcde5'
+      },
       keyframes: {
         fadeIn: {
           "0%": {

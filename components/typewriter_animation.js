@@ -24,7 +24,7 @@ export default function TypewriterAnimation(props) {
                 setCurrentText(prevText => prevText.slice(0, -1));
                 setTimeout(() => {
                     deleteText(i - 1);
-                }, (Math.random() * 0.3 + 0.7) * 70);
+                }, 70);
             } else {
                 setTimeout(() => {
                     typeWriter(0);
