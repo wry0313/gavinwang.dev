@@ -25,7 +25,7 @@ export default function Home({ allPostsData }) {
       <div className="fixed top-2 right-2 hover:animate-wiggle">
         <GitHubButton></GitHubButton>
       </div>
-      <section className="group front-page-card hover:bg-transparent hover:backdrop-blur-sm hover:text-white">
+      <section className="select-none group front-page-card hover:bg-transparent hover:backdrop-blur-sm hover:text-white">
         <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
           🧑‍💻<Typing words={["gavinwang.dev", "machine learning", "web development", "mathematics", "journaling", "why tf r u still here"]} speed="300" />
         </h1>
