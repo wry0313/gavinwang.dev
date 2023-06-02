@@ -1,7 +1,7 @@
-import Layout from '../../components/Layout';
+import Layout from '../../components/layout';
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head';
-import Date from '../../components/Date'
+import Date from '../../components/date'
 import ReactMarkdown from "react-markdown"
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneLight} from 'react-syntax-highlighter/dist/cjs/styles/prism'

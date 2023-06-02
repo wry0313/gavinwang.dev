@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/Layout';
+import Layout, { siteTitle } from '../components/layout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
-import Date from '../components/Date';
-import Typing from '../components/Typing';
-import GitHubButton from '../components/GitHubButton';
+import Date from '../components/date';
+import Typing from '../components/typing';
+import GitHubButton from '../components/githubButton';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -22,9 +22,9 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="fixed top-2 right-2">
-  <GitHubButton className=""></GitHubButton>
-</div>
+      <div className="fixed top-2 right-2 invisible md:visible">
+        <GitHubButton></GitHubButton>
+      </div>
       <section className="front-page-card hover:bg-transparent hover:backdrop-blur-sm hover:text-white">
         <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
           🧑‍💻<Typing text="gavinwang.dev" speed="400" />

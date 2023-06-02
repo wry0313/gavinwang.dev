@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import ParticlesBG from "./ParticlesBG";
+import ParticlesBG from "./particleBG";
 
 
 export const siteTitle = 'gavinwang.dev Personal Developer Blog Site';
