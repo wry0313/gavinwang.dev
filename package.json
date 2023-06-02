@@ -16,8 +16,12 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
+    "react-particles": "^2.9.3",
     "react-syntax-highlighter": "^15.5.0",
-    "rehype-raw": "^6.1.1"
+    "react-tsparticles": "^2.9.3",
+    "rehype-raw": "^6.1.1",
+    "tsparticles": "^2.9.3",
+    "tsparticles-engine": "^2.9.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",

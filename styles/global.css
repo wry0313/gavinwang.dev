@@ -3,16 +3,44 @@
   @tailwind utilities;
 
   @layer utilities {
-
-    /* Chrome, Safari and Opera */
     .no-scrollbar::-webkit-scrollbar {
       display: none;
     }
-
     .no-scrollbar {
       -ms-overflow-style: none;
-      /* IE and Edge */
       scrollbar-width: none;
-      /* Firefox */
     }
+  }
+
+  @layer components {
+    .front-page-card {
+     @apply bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn
+    }
+
+    /* ... */
+  }
+
+  .gradient-animation {
+    background: radial-gradient( #bbcde5, #89bbfe,#639fab,#acedff, #639fab);
+    background-size: 400% 400%;
+    animation: gradient 40s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @layer base {
+    a {
+      @apply text-white;
+    }
+    /* ... */
   }

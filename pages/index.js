@@ -1,12 +1,9 @@
 import Head from 'next/head';
-
-import Layout, {siteTitle} from '../components/layout';
+import Layout, { siteTitle } from '../components/layout';
+import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
-import TypewriterAnimation from '../components/typewriter_animation';
-
-
-import { getSortedPostsData } from '../lib/posts';
+import Typing from '../components/typing';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -24,23 +21,21 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <header className="flex flex-col bg-[#F5F7F7] shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
-      <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
-      🧑‍💻<TypewriterAnimation text="gavinwang.dev" speed="400" />
-      </h1>
-      <section id="self-introduction">
-          <p className="inline">Hi there! </p>
-          <div className="inline-block animate-wiggle text-[1.5rem]"> 👋 </div>
-          <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things about coding 💻 on this blog site ✍️</p>
-        </section>
-      </header>
+      <section className="front-page-card">
+        <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
+          🧑‍💻<Typing text="gavinwang.dev" speed="400" />
+        </h1>
+        <p className="inline">Hi there! </p>
+        <div className="inline-block animate-wiggle text-[1.5rem]"> 👋 </div>
+        <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things about coding 💻 on this blog site ✍️</p>
+      </section>
 
-      <section className="bg-[#F5F7F7] shadow-md rounded p-2 my-4 hover:scale-105 duration-300 animate-fadeIn">
+      <section className=" p-2 mt-4 front-page-card">
         <h2 className="text-[1.5rem] leading-[1.4]">📠 Blogs</h2>
         <ul className="list-none">
           {allPostsData.map((post) => (
             <li className="mt-[1.25rem]" key={post.id}>
-              <Link className="text-[#0070f3]" href={`/posts/${post.id}`}>
+              <Link className="text-lapis" href={`/posts/${post.id}`}>
                 {post.title}
               </Link>
               <br />
@@ -55,11 +50,11 @@ export default function Home({ allPostsData }) {
         </ul>
       </section>
 
-      <section className="bg-[#F5F7F7] shadow-md rounded p-2 mt-4 hover:scale-105 duration-300 animate-fadeIn">
+      <section className="mt-4 p-2 front-page-card">
         <h2 className="text-[1.5rem] leading-[1.4]">💾 Project Demos</h2>
         <ul className="list-none">
           <li className="mt-[1.25rem] leading-2">
-            <Link className="text-[#0070f3]" href="/dog">
+            <Link className="text-lapis" href="/dog">
               🐕 Dog vs. 🐈 Cat Classifier Demo
             </Link>
             <div className="text-gray-600 text-base">

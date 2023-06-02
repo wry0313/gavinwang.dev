@@ -1,11 +1,16 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import ParticlesBG from "./particles";
+
 
 export const siteTitle = 'gavinwang.dev Personal Developer Blog Site';
 
 export default function Layout({ children, home }) {
+
   return (
-    <div className="max-w-[42rem] py-[1rem] px-[1rem] mx-auto text-[18px]">
+    <div className={home ? 'gradient-animation' : ''}>
+      <ParticlesBG className="z-0"></ParticlesBG>
+       <div className=" z-40 relative max-w-[44rem] pt-2 pb-8 mx-auto text-[19px]">
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
@@ -23,9 +28,10 @@ export default function Layout({ children, home }) {
 
       {!home && (
         <div className="mt-[2rem] mb-[8rem] inline-block hover:scale-110 duration-300">
-         <Link className="text-[#0070f3]" href="/">🔙 Back to home</Link>
+         <Link className="text-sky-700" href="/">🔙 Back to home</Link>
         </div>
       )}
+    </div>
     </div>
   );
 }

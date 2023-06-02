@@ -13,10 +13,13 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
         'black': '#222222',
-        'white': 'ffffff',
+        'white': '#ffffff',
         'lapis': '#1c5d99',
         'moonstone': '#639fab',
-        'powder': '#bbcde5'
+        'powder': '#bbcde5',
+        'neon': '#acedff',
+        'softblue': '#89bbfe',
+        'frenchgray': '#d2d5dd'
       },
       keyframes: {
         fadeIn: {

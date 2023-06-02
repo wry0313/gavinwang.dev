@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 export default function Post({ content, data, wordCount, readTime }) {
     return (
-        <Layout>
+        <Layout article>
             <Head>
                 <title>{data.title}</title>
             </Head>
@@ -41,7 +41,7 @@ export default function Post({ content, data, wordCount, readTime }) {
                               PreTag="div"
                             />
                           ) : (
-                                 <code {...props} className="text-cyan-900 bg-[#F5F7F7] shadow-xs rounded-lg p-1">
+                                 <code {...props} className="text-cyan-900 bg-zinc-100 shadow-xs rounded-lg p-1">
                               {children}
                             </code>
                           )

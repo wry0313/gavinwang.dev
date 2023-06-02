@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function TypewriterAnimation(props) {
+export default function Typing(props) {
     const [currentText, setCurrentText] = useState('');
     const text = props.text;
     const speed = props.speed;
