@@ -1,4 +1,4 @@
-import ParticlesBG from "../components/particles";
+import ParticlesBG from "../components/ParticlesBG";
 
 export default function App () {
     return(
