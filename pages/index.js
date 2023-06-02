@@ -27,11 +27,11 @@ export default function Home({ allPostsData }) {
       </div>
       <section className="group front-page-card hover:bg-transparent hover:backdrop-blur-sm hover:text-white">
         <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
-          🧑‍💻<Typing words={["gavinwang.dev", "machine learning"]} speed="400" />
+          🧑‍💻<Typing words={["gavinwang.dev", "machine learning", "web development", "mathematics", "journaling", "why tf r u still here"]} speed="300" />
         </h1>
         <p className="inline">Hi there! </p>
         <div className="inline-block animate-wiggle text-[1.5rem]"> 👋 </div>
-        <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things about coding 💻 on this blog site ✍️</p>
+        <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍️</p>
       </section>
 
       <section className=" p-2 mt-4 front-page-card">
