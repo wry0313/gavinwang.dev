@@ -7,11 +7,11 @@ You know, Markdown is like the cool kid on the block when it comes to simple and
 
 So mark your calendars 📅 for June 2nd, 2023, because we're diving deep into the world of Markdown. We'll explore how to set it up in your Next.js projects and additionally learn how to have syntax highlighting for code blocks and rehype HTML. Say goodbye to the hassle and hello to smooth sailing in your coding adventures! 🌟🌅
 
-Say that you have a `fortnite_from_noob_to_master.md` and you want to display that onto your next.js or react.js project. How do you do that? 🤔
+Say that you have a `fortnite-vbucks-code.md` and you want to display that onto your next.js or react.js project. How do you do that? 🤔
 
 ## Setting Up React-Markdown
 
-Download the Node package `react-markdown`
+First download the Node package `react-markdown`
 
 ```bash
 npm install react-markdown
