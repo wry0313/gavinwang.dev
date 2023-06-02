@@ -9,8 +9,8 @@ export default function Layout({ children, home }) {
 
   return (
     <div className={home ? 'gradient-animation' : ''}>
-      <ParticlesBG className="z-0"></ParticlesBG>
-       <div className=" z-40 relative max-w-[44rem] pt-2 pb-8 mx-auto text-[19px]">
+      <ParticlesBG className=""></ParticlesBG>
+       <div className="relative max-w-[44rem] pt-2 pb-8 mx-auto text-[19px]">
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />

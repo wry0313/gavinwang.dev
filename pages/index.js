@@ -21,7 +21,7 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className="front-page-card">
+      <section className="front-page-card hover:bg-transparent hover:backdrop-blur-sm">
         <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
           🧑‍💻<Typing text="gavinwang.dev" speed="400" />
         </h1>
