@@ -39,7 +39,9 @@ you should see this on your page:
   }
 </style>
 
-3. make a `README.md` file in a new folder and call it posts. We will store all our markdown files in this folder. Copy and Paste this into your `README.md` file. 
+## Dynamic Routes for Your Markdown Files
+
+Make a `README.md` file in a new folder and call it posts. We will store all our markdown files in this folder. Copy and Paste this into your `README.md` file. 
 
 ~~~markdown
 ---
@@ -83,9 +85,9 @@ npm install gray-matter
 ```
 
 
-4. in order to dispaly `README.md`onto a page, we will use next.js dynamic routing. For more information refer to this [tutortial](https://nextjs.org/learn/basics/dynamic-routes).
+In order to dispaly `README.md`onto a page, we will use next.js **dynamic routing**. For more information refer to this [tutortial](https://nextjs.org/learn/basics/dynamic-routes).
 
-Create a top-level directory called `lib` in the root directory. Then, inside `lib`, create a file called `posts.js`, and copy and paste this code:
+Create a top-level directory called `lib` in the root directory. Then, inside `lib`, create a file called `posts.js`, and copy and paste this:
 
 ```js
 import fs from 'fs';
@@ -155,7 +157,8 @@ Now if you go to [http://localhost:3000/posts/README](http://localhost:3000/post
 
 ![react markdown showcase {{ w: 400, h: 400 }}](/article/react_markdown_showcase.png)
 
-5. Now let's give the plain HTML some typographic defaults with the Tailwind CSS plugin [typography](https://tailwindcss.com/docs/typography-plugin). If you don't already have TailwindCSS😱, refer to this [setup guide](https://nextjs.org/docs/app/building-your-application/styling/tailwind-css).
+## Better Markdown = Markdown + Tailwind CSS
+Now let's give the plain HTML some typographic defaults with the Tailwind CSS plugin [typography](https://tailwindcss.com/docs/typography-plugin). If you don't already have TailwindCSS😱, refer to this [setup guide](https://nextjs.org/docs/app/building-your-application/styling/tailwind-css).
 
 ```bash
 npm install -D @tailwindcss/typography
@@ -181,10 +184,104 @@ Simply add the class `prose` to your `<ReactMarkdown>`component and now take a l
 ![tailwindcss markdown showcase {{ w: 400, h: 400 }}](/article/markdown_tailwind_showcase.png)
 
 
-6. But you see, the code blocks aren't highlighted with syntax... Luckily, with `react-markdown`it is easy to apply syntax highlighting! Simply run
+## Syntax Highlighting for Code Blocks
+
+But you see, the code blocks aren't highlighted with syntax... Luckily, with `react-markdown`it is easy to apply syntax highlighting! Simply run:
 
 ```bash
 npm install react-syntax-highlighter
 ```
 
-if you want to use Tailwind CSS inside your blog post: "./posts/**/*.{js,ts,jsx,tsx,md,mdx}"
+Simply add this to your `[id].js`: 
+```js
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
+import {oneLight} from 'react-syntax-highlighter/dist/cjs/styles/prism'
+
+
+export default function Post({ content, data }) {
+    return (
+        <> 
+            <h1>{data.title}</h1>
+            <p>{data.date}</p>
+            <ReactMarkdown
+                className="prose"
+                children={content} 
+                components={{
+                  code({node, inline, className, children, ...props}) {
+                    const match = /language-(\w+)/.exec(className || '')
+                    return !inline && match ? (
+                      <SyntaxHighlighter
+                        {...props}
+                        children={String(children).replace(/\n$/, '')}
+                        style={oneLight}
+                        language={match[1]}
+                        PreTag="div"
+                      />
+                    ) : (
+                      <code {...props} className={className}>
+                        {children}
+                      </code>
+                    )
+                  }
+                }}
+            />
+        </>
+    )
+}
+```
+
+In `react-markdown`, you can overwrite the normal handling of an element by passing a component. In this case, we override the normal handling of the `<code>` block with `react-syntax-highlighter` 😉. In the example, I picked the theme `oneLight` but there any many [more themes](https://github.com/react-syntax-highlighter/react-syntax-highlighter/blob/master/AVAILABLE_STYLES_PRISM.MD) to choose from!
+
+![react-syntax-highlighter showcase {{ w: 400, h: 400 }}](/article/syntax_highlighting1.png)
+
+Alright, so here's the deal, folks. Take a look at that code block, and what do we see? Yup, you got it—a black border surrounding it. Now, you might be wondering, "What's up with that?" Well, my friend, it's all because of that snazzy tailwind typography plugin and its fancy style for the `<pre>` tag.
+
+Make a `typography.css` file in your `styles` folder with this code:
+
+```css
+.prose :where(pre):not(:where([class~="not-prose"] *)) {
+    @apply p-0 bg-transparent;
+}
+```
+
+In `pages/_app.js` (where you have to import `globals.css` files for next.js), add the line 
+```js
+import '../styles/typography.css';
+```
+
+And there ya go 😎: 
+![react-syntax-highlighter showcase 2{{ w: 400, h: 400 }}](/article/syntax_highlighting2.png)
+
+You can use `typography.css` to add more custom CSS to any elements with the `prose` class name, such as our markdown page rendered by the `<ReactMarkdown>` element!
+
+## Markdown? Markup! 
+
+>The ReactMarkdown component is for rendering mark down, not HTML mark up 😏. Given HTML input it just escapes it, and that's why you see it as "source", not formatted text. 
+
+>If you need to use it with HTML you need to apply a plugin, such as rehypeRaw :
+
+*——[https://stackoverflow.com/a/70548866](https://stackoverflow.com/a/70548866)*
+
+```js
+import ReactMarkdown from "react-markdown";
+import rehypeRaw from "rehype-raw";
+
+//...
+
+      <ReactMarkdown className="prose" children={content} rehypePlugins={[rehypeRaw]}
+          components={{
+            //...
+          }}
+       />
+
+```
+
+Now you can add your own HTML elemnts to your markdown flle! If you want to apply `Tailwindcss`, make sure to add the code in your `tailwind.config.js`:
+```js
+module.exports = {
+  content: [
+    "./posts/**/*.{md}"
+  ],
+```
+
+And there you have it! We've reached the end of our journey through the Complete Setup Guide for Markdown in React.js Projects. I hope this guide has armed you with the knowledge and tools to create stunning, well-formatted content with ease. Until next time, happy coding! 🚀💻

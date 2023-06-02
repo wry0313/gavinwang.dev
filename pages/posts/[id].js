@@ -18,7 +18,7 @@ export default function Post({ content, data, wordCount, readTime }) {
             </Head>
 
             <div>
-                <h1 className="text-[2rem] leading-[1.3] font-extrabold">{data.title}</h1>
+                <h1 className="text-[2rem] leading-[1.3] font-extrabold text-sky-900">{data.title}</h1>
                 <hr className="h-[3.5px] my-2 bg-slate-300"></hr>
                 <div className="flex text-base mb-8 text-slate-500">
                     <Date dateString={data.date} />
@@ -26,8 +26,7 @@ export default function Post({ content, data, wordCount, readTime }) {
                     <p className="ml-6"> {readTime} min read</p>
                 </div>
 
-                <ReactMarkdown className="prose prose-a:text-blue-600 prose-a:no-underline prose-pre:bg-transparent prose-pre:p-0 
-                hover:prose-a:text-blue-500"
+                <ReactMarkdown className="prose"
                     children={content}
                     rehypePlugins={[rehypeRaw]}
                     components={{
@@ -45,7 +44,6 @@ export default function Post({ content, data, wordCount, readTime }) {
                                  <code {...props} className="text-cyan-900 bg-[#F5F7F7] shadow-xs rounded-lg p-1">
                               {children}
                             </code>
-
                           )
                         },
 
