@@ -4,7 +4,7 @@ import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
 import Typing from '../components/typing';
-import GitHubButton from '../components/githubButton';
+import GitHubButton from '../components/github-button';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
