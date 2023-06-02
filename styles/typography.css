@@ -1,0 +1,3 @@
+.prose :where(h2):not(:where([class~="not-prose"] *)) {
+  @apply font-bold text-slate-400;
+}

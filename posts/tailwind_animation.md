@@ -1,5 +1,5 @@
 ---
-title: '💥 Intro to Tailwind CSS Animation'
+title: '💥 Intro to Tailwind CSS Animations'
 date: '2023-06-01'
 ---
 
@@ -41,19 +41,6 @@ Here are some animations that Tailwind already provides:
 <button className="bg-[#F5F7F7] shadow rounded-lg p-2 hover:scale-110 duration-300"> Click? </button>
 ```
 `hover:scale-110` class scales the button to 110% of its original size when the hover event is triggered. The `duration-300` class sets the duration of the scaling animation to 300 milliseconds, controlling how quickly or slowly the scaling effect occurs.
-
-<style>
-  @keyframes spin {
-
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  
-  .animate-spin {
-    animation: spin 2s infinite linear;
-  }
-</style>
 
 As you can see in these four simple examples, you can quickly add animations to existing HTML components with Tailwind CSS pre-built animation classes. However, say that you want to add some new animation such as making a waving hand: <span class="animate-wiggle inline-block"> 👋 </span> ?
 
@@ -99,7 +86,7 @@ module.exports = {
 }
 ```
 
-Now lets look at another example: how to make a animation that goes in a circular path? like this:<span className="animate-moveCircle inline-block">✍️</span>
+Now let's look at another example: how to make a animation that goes in a circular path? like this:<span className="animate-moveCircle inline-block">✍️</span>
 
 Here is the code: 
 ```js
@@ -124,4 +111,6 @@ module.exports = {
 This is actually kind of tricky, so I won't attempt to explain it here. But you should definitely check out how it works [here](https://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/). Additionally this [stack overflow linkk](https://stackoverflow.com/questions/38877163/why-rotate0deg-matters?rq=1) would also help. 
 
 
-Thats it! After reading this article, you should be able to skillfully  use CSS animation and also understand how to do it with the tailwind CSS framework! Now look at your own website, and ask yourself if there are anyways to use CSS animation to bring life and interactivity—go ahead try exploring and experimenting with various animations!
+That's it! After reading this article, you should be able to skillfully use CSS animation and understand how to do it with the Tailwind CSS framework. Now, take a look at your own website and ask yourself if there are any ways to use CSS animation to bring life and interactivity. Go ahead and explore and experiment with CSS animations!
+
+<span className="animate-pulse">✨🌟😳🤟</span>

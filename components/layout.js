@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 
-export const siteTitle = 'gavinwang.dev';
+export const siteTitle = 'gavinwang.dev Personal Developer Blog Site';
 
 export default function Layout({ children, home }) {
   return (
@@ -14,16 +14,16 @@ export default function Layout({ children, home }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content="gavin wang personal dev site"
+          content="gavin wang personal developer blog site with blogs on machine learning, web development, and project showcases"
         />
-        <meta name="og:title" content="gavinwang.dev" />
+        <meta name="og:title" content={siteTitle} />
       </Head>
 
       <main >{children}</main>
 
       {!home && (
         <div className="mt-[2rem] mb-[8rem] inline-block hover:scale-110 duration-300">
-         <Link className="text-[#0070f3] bg-[#F5F7F7] p-2 rounded-lg shadow" href="/">🔙 Back to home</Link>
+         <Link className="text-[#0070f3]" href="/">🔙 Back to home</Link>
         </div>
       )}
     </div>

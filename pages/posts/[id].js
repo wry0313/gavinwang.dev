@@ -6,6 +6,8 @@ import ReactMarkdown from "react-markdown"
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneLight} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import rehypeRaw from 'rehype-raw';
+import Image from 'next/image';
+
 
 
 export default function Post({ content, data, wordCount, readTime }) {
@@ -24,7 +26,8 @@ export default function Post({ content, data, wordCount, readTime }) {
                     <p className="ml-6"> {readTime} min read</p>
                 </div>
 
-                <ReactMarkdown className="prose prose-a:text-blue-600 prose-pre:bg-transparent prose-pre:p-0 hover:prose-a:text-blue-500"
+                <ReactMarkdown className="prose prose-a:text-blue-600 prose-a:no-underline prose-pre:bg-transparent prose-pre:p-0 
+                hover:prose-a:text-blue-500"
                     children={content}
                     rehypePlugins={[rehypeRaw]}
                     components={{
@@ -39,11 +42,32 @@ export default function Post({ content, data, wordCount, readTime }) {
                               PreTag="div"
                             />
                           ) : (
-                            <code {...props} className={className}>
+                                 <code {...props} className="text-cyan-900 bg-[#F5F7F7] shadow-xs rounded-lg p-1">
                               {children}
                             </code>
+
                           )
-                        }
+                        },
+
+                        img: function ({ ...props }) {
+                            const substrings = props.alt?.split('{{');
+                            const alt = substrings[0].trim();
+                
+                            const width = substrings[1] ? substrings[1].match(/(?<=w:\s?)\d+/g)[0] : 800;
+                            const height = substrings[1] ? substrings[1].match(/(?<=h:\s?)\d+/g)[0] : 400;
+                            return (
+                                <span className="flex justify-cente hover:scale-110 duration-300">
+                                <Image
+                                  className="mx-auto shadow" // Add the mx-auto class to center the image horizontally
+                                  src={props.src}
+                                  alt={alt}
+                                  width={width}
+                                  height={height}
+                                />
+                              </span>
+                            )
+                        },
+
                       }}                  
                 />
             </div>

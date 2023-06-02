@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import Layout from '../components/layout';
+import Layout, {siteTitle} from '../components/layout';
 import Link from 'next/link';
 import Date from '../components/date';
 import TypewriterAnimation from '../components/typewriter_animation';
@@ -22,7 +22,7 @@ export default function Home({ allPostsData }) {
   return (
     <Layout home>
       <Head>
-        <title>gavinwang.dev</title>
+        <title>{siteTitle}</title>
       </Head>
       <header className="flex flex-col bg-[#F5F7F7] shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
       <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
