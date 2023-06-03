@@ -1,46 +1,52 @@
-  @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  @layer utilities {
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
-
-  @layer components {
-    .front-page-card {
-     @apply bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn
-    }
-
-    /* ... */
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
+}
 
-  .gradient-animation {
-    background: radial-gradient( #bbcde5, #89bbfe,#639fab,#acedff, #639fab);
-    background-size: 400% 400%;
-    animation: gradient 40s ease infinite;
+@layer components {
+  .front-page-card {
+  @apply bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn
   }
+}
 
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
+.gradient-animation {
+  background: radial-gradient( #bbcde5, #89bbfe,#639fab,#acedff, #639fab);
+  background-size: 400% 400%;
+  animation: gradient 40s ease infinite;
+}
 
-  @layer base {
-    a {
-      @apply text-white;
-    }
-    /* ... */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+html,
+body {
+  margin: 0;
+  height: 120%;
+}
+
+#__next {
+  height: 100%;
+}
+
+#background-div {
+  height:100%
+}

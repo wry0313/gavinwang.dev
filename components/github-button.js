@@ -1,7 +1,7 @@
 const github = "https://github.com/wry0313"
 const GitHubButton = () => {
     return (
-        <div className="hover:scale-110 duration-300 invisible md:visible">
+        <div className="text-white hover:scale-110 duration-300 hover:animate-wiggle inline-block">
             <a href={github} target="_blank" rel="noreferrer">
                 <svg
                     className={"h-5 w-5 sm:h-6 sm:w-6"}

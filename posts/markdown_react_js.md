@@ -276,7 +276,7 @@ import rehypeRaw from "rehype-raw";
 
 ```
 
-Now you can add your own HTML elemnts to your markdown flle! If you want to apply `Tailwindcss`, make sure to add the code in your `tailwind.config.js`:
+Now you can add your own HTML elemnts to your markdown flle! If you want to apply Tailwind util classes to your HTML elements in you markdown file, make sure to add this code in your `tailwind.config.js` file:
 ```js
 module.exports = {
   content: [

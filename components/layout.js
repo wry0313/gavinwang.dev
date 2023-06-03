@@ -1,16 +1,25 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import ParticlesBG from "./particleBG";
+import ParticlesNeural from "./particle-neural";
+import ParticlesLinks from './particle-links';
+import ParticlesExp from './particles-experiment';
+import Navbar from './navbar';
 
+import {useState} from 'react'
 
 export const siteTitle = 'gavinwang.dev Personal Developer Blog Site';
 
 export default function Layout({ children, home }) {
+  const [background, setBackground] = useState(true)
+
+  const changeBackground = () => {
+    setBackground(prevBackground => !prevBackground)
+  }
 
   return (
-    <div className={home ? 'gradient-animation' : ''}>
-      <ParticlesBG className=""></ParticlesBG>
-       <div className="relative max-w-[48rem] p-4 pb-8 mx-auto text-[19px]">
+    <div onClick={changeBackground} id="background-div" className={home ? 'gradient-animation' : ''}>
+      {home && (background ? <ParticlesNeural /> : <ParticlesLinks />)}
+      {home && <Navbar />}
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
@@ -23,7 +32,8 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
       </Head>
-
+      
+      <div className="relative max-w-[48rem] mx-auto text-[19px] py-10">
       <main >{children}</main>
 
       {!home && (

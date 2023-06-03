@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
-export default function ParticlesBG () {
+export default function ParticlesNeural () {
     const particlesInit = useCallback(async engine => {
         console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -30,11 +30,11 @@ export default function ParticlesBG () {
                 interactivity: {
                     events: {
                         onClick: {
-                            enable: true,
+                            enable: false,
                             mode: "push",
                         },
                         onHover: {
-                            enable: true,
+                            enable: false,
                             mode: "repulse",
                         },
                         resize: true,
@@ -45,7 +45,7 @@ export default function ParticlesBG () {
                         },
                         repulse: {
                             distance: 100,
-                            duration: 1,
+                            duration: 10,
                         },
                     },
                 },
@@ -55,10 +55,10 @@ export default function ParticlesBG () {
                     },
                     links: {
                         color: "#ffffff",
-                        distance: 150,
+                        distance: 1000,
                         enable: true,
-                        opacity: 0.5,
-                        width: 1,
+                        opacity: 0.4  ,
+                        width: 8,
                     },
                     collisions: {
                         enable: true,
@@ -69,16 +69,16 @@ export default function ParticlesBG () {
                         outModes: {
                             default: "bounce",
                         },
-                        random: false,
-                        speed: 4,
-                        straight: false,
+                        random: true,
+                        speed: 2,
+                        straight: true,
                     },
                     number: {
                         density: {
                             enable: true,
                             area: 800,
                         },
-                        value: 80,
+                        value: 15,
                     },
                     opacity: {
                         value: 0.6,
@@ -87,7 +87,7 @@ export default function ParticlesBG () {
                         type: ["circle"],
                     },
                     size: {
-                        value: { min: 1, max: 5 },
+                        value: { min: 0, max: 0 },
                     },
                 },
                 detectRetina: true,

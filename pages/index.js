@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Date from '../components/date';
 import Typing from '../components/typing';
 import GitHubButton from '../components/github-button';
+import Navbar from '../components/navbar';
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -22,9 +23,10 @@ export default function Home({ allPostsData }) {
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <div className="fixed top-2 right-2 hover:animate-wiggle">
+      {/* <div className="fixed top-2 right-2 hover:animate-wiggle">
         <GitHubButton></GitHubButton>
-      </div>
+      </div> */}
+      <div id="homepage sections" className="px-4 md:px-0 py-4"> 
       <section className="select-none group front-page-card hover:bg-transparent hover:backdrop-blur-sm hover:text-white">
         <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
           🧑‍💻<Typing words={["gavinwang.dev", "machine learning", "web development", "mathematics", "journaling", "why tf r u still here"]} speed="300" />
@@ -70,6 +72,7 @@ export default function Home({ allPostsData }) {
           </li>
         </ul>
       </section>
+      </div>
     </Layout>
   );
 }

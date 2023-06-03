@@ -113,4 +113,4 @@ This is actually kind of tricky, so I won't attempt to explain it here. But you 
 
 That's it! After reading this article, you should be able to skillfully use CSS animation and understand how to do it with the Tailwind CSS framework. Now, take a look at your own website and ask yourself if there are any ways to use CSS animation to bring life and interactivity. Go ahead and explore and experiment with CSS animations!
 
-<span className="animate-pulse">✨🌟😳🤟</span>
+<span className="animate-pulse">✨🌟</span>
