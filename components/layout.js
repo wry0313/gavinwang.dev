@@ -40,7 +40,6 @@ export default function Layout({ children, home }) {
           name="description"
           content="gavin wang personal developer blog site with blogs on machine learning, web development, and project showcases"
         />
-        <meta name="og:title" content={siteTitle} />
       </Head>
       
       <div className="relative max-w-[48rem] mx-auto text-[19px] py-10">

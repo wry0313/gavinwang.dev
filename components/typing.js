@@ -56,7 +56,7 @@ export default function Typing({ words, speed }) {
     return (
         <div className="flex items-center">
             <h1>{displaytext}</h1>
-            <span className={`border-white h-[75%] border-r-[2.5px] md:border-r-[3px] border-solid border-black ${displaytext.length === currentText.length | displaytext.length === 0 ? 'animate-caret' : ''}`}></span>
+            <span className={`border-white h-[4rem] border-r-[2.5px] md:border-r-[3px] border-solid border-black ${displaytext.length === currentText.length | displaytext.length === 0 ? 'animate-caret' : ''}`}></span>
         </div>
     );
 }

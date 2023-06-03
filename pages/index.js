@@ -22,6 +22,7 @@ export default function Home({ allPostsData }) {
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
+        
       </Head>
       {/* <div className="fixed top-2 right-2 hover:animate-wiggle">
         <GitHubButton></GitHubButton>
@@ -29,7 +30,7 @@ export default function Home({ allPostsData }) {
       <div id="homepage sections" className="px-4 md:px-0 py-4"> 
       <section className="select-none group front-page-card bg-transparent backdrop-blur-[3px] text-white">
         <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
-          🧑‍💻<Typing words={["gavinwang.dev", "machine learning", "web development", "mathematics", "journaling", "why tf r u still here"]} speed="300" />
+          🧑‍💻<Typing words={["gavinwang.dev", "machine learning", "web development", "mathematics", "journaling", "hmu on twitter :)"]} speed="300" />
         </h1>
         <p className="inline">Hi there! </p>
         <div className="inline-block animate-wiggle text-[1.5rem]"> 👋 </div>

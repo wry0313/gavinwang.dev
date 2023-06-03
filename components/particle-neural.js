@@ -51,7 +51,7 @@ export default function ParticlesNeural () {
                 },
                 particles: {
                     color: {
-                        value: ["#ffffff"]
+                        value: ["#ffffff"],
                     },
                     links: {
                         color: "#ffffff",

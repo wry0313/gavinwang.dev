@@ -127,7 +127,7 @@ export default function ParticlesAmongUs () {
                                 "type": "images",
                                 "options": {
                                     "images": {
-                                        "src": "https://particles.js.org/images/cyan_amongus.png",
+                                        "src": "images/cyan_amongus.png",
                                         "width": 500,
                                         "height": 634
                                     }
