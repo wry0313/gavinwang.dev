@@ -7,13 +7,12 @@ import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter'
 import {oneLight} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import rehypeRaw from 'rehype-raw';
 import Image from 'next/image';
-import BoopButton from '../../components/boopbutton';
+
 
 
 export default function Post({ content, data, wordCount, readTime }) {
     return (
-        <div>
-            <BoopButton></BoopButton>
+        <Layout>
             <Head>
                 <title>{data.title}</title>
             </Head>
@@ -70,7 +69,7 @@ export default function Post({ content, data, wordCount, readTime }) {
                       }}                  
                 />
             </div>
-        </div>
+        </Layout>
     );
 }
 

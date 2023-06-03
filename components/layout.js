@@ -23,7 +23,7 @@ export default function Layout({ children, home }) {
   }
 
   return (
-    <div onClick={changeBackground} id="background-div" className={home ? 'gradient-animation' : ''}>
+<div onClick={changeBackground} id="background-div" className={home && (backgroundIdx === 1 || backgroundIdx === 2) ? 'gradient-animation' : ''}>
       {home && (backgroundIdx === 0 && <ParticlesParallax /> )}
       {home && (backgroundIdx === 1 && <ParticlesNeural /> )}
       {home && (backgroundIdx === 2 && <ParticlesLinks /> )}
