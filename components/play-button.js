@@ -1,5 +1,5 @@
 import useSound from 'use-sound';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import useBoop from '../hooks/useBoop';
 import { animated } from 'react-spring';
 
@@ -7,6 +7,7 @@ export default function PlayButton({ soundUrl }) {
     const [style, trigger] = useBoop({ rotation: -10 });
     const [play, { stop }] = useSound(soundUrl);
     const [isPlaying, setIsPlaying] = useState(false)
+ 
     const handlePlayerClick = () => {
         if (isPlaying) {
             stop()
@@ -16,6 +17,15 @@ export default function PlayButton({ soundUrl }) {
             setIsPlaying(true)
         }
     }
+    useEffect(() => {
+        return () => {
+          if (isPlaying) {
+            stop();
+          }
+        };
+      }, [isPlaying]); //In JavaScript, closures are created when a function is defined and it captures the variables that are in scope at the time of its creation. In the case of the useEffect hook, the cleanup function inside it is created when the component is initially rendered, and it captures the values of the variables referenced within it.
+
+
 
     if (isPlaying) {
         //pause

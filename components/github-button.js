@@ -8,7 +8,7 @@ const GitHubButton = () => {
     const [play] = useSound('/audios/pop.mp3', { volume: 0.1 })
 
     return (
-          <animated.span style={style}  onMouseEnter={trigger} onClick={play} >
+          <animated.span style={style}  onMouseEnter={()=>{trigger();play()}} >
           <a  href={github} target="_blank" rel="noreferrer">
               <svg
                   className={"fill-stone-100 h-5 w-5 sm:h-6 sm:w-6"}
