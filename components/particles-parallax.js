@@ -2,7 +2,7 @@ import { useCallback } from "react";
 import Particles from "react-particles";
 import { loadFull } from "tsparticles";
 
-export default function ParticlesExp () {
+export default function ParticlesParallax () {
     const particlesInit = useCallback(async engine => {
         console.log(engine);
         // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -22,75 +22,57 @@ export default function ParticlesExp () {
             loaded={particlesLoaded}
             options={
                 {
-                    background: {
+                    "fullScreen": {
+                        "enable": true,
                     },
-                    fpsLimit: 120,
-                    "emitters": {
-                        "position": {
-                            "x": 50,
-                            "y": 50
-                        },
-                        "size": {
-                            "width": 50,
-                            "height": 50,
-                            "mode": "precise"
-                        },
-                        "rate": {
-                            "delay": 0.25,
-                            "quantity": 4
-                        }
-                    },
+                    "fpsLimit": 120,
                     "particles": {
                         "number": {
-                            "value": 0,
-                            "limit": 300
+                            "value": 100,
+                            "density": {
+                                "enable": true
+                            }
                         },
                         "color": {
-                            "value": ["#FFFFFF"]
+                            "value": "#ffffff"
                         },
                         "shape": {
                             "type": "circle"
                         },
                         "opacity": {
-                            "value": 1
+                            "value": 0.5,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 3,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
                         },
                         "size": {
-                            "value": 3
+                            "value": 10,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 20,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
                         },
-                        "links": {
-                            "enable": false,
+                        "line_linked": {
+                            "enable": true,
                             "distance": 150,
-                            "color": "#00",
+                            "color": "#ffffff",
                             "opacity": 0.4,
                             "width": 1
                         },
                         "move": {
                             "enable": true,
-                            "speed": 3,
+                            "speed": 2,
                             "direction": "none",
                             "random": false,
                             "straight": false,
-                            "outModes": {
-                                "default": "destroy"
-                            },
-                            "bounce": false,
-                            "path": {
-                                "enable": true,
-                                "delay": {
-                                    "value": 0.1
-                                },
-                                "options": {
-                                    "size": 5,
-                                    "draw": false,
-                                    "increment": 0.001
-                                },
-                                "generator": "perlinNoise"
-                            },
-                            "trail": {
-                                "enable": true,
-                                "fillColor": "#000000",
-                                "length": 20
-                            },
+                            "out_mode": "out",
                             "attract": {
                                 "enable": false,
                                 "rotateX": 600,
@@ -100,20 +82,25 @@ export default function ParticlesExp () {
                     },
                     "interactivity": {
                         "events": {
-                            "onHover": {
-                                "enable": false,
-                                "mode": "grab"
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab",
+                                "parallax": {
+                                    "enable": true,
+                                    "smooth": 10,
+                                    "force": 60
+                                }
                             },
-                            "onClick": {
-                                "enable": false,
-                                "mode": "repulse"
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
                             },
                             "resize": true
                         },
                         "modes": {
                             "grab": {
-                                "distance": 200,
-                                "links": {
+                                "distance": 400,
+                                "line_linked": {
                                     "opacity": 1
                                 }
                             },
@@ -121,18 +108,27 @@ export default function ParticlesExp () {
                                 "distance": 400,
                                 "size": 40,
                                 "duration": 2,
-                                "opacity": 8
+                                "opacity": 0.8,
+                                "speed": 3
                             },
                             "repulse": {
                                 "distance": 200
                             },
                             "push": {
-                                "quantity": 4
+                                "particles_nb": 4
                             },
                             "remove": {
-                                "quantity": 2
+                                "particles_nb": 2
                             }
                         }
+                    },
+                    "retina_detect": true,
+                    "background": {
+                        "color": "#0d47a1",
+                        "image": "",
+                        "position": "50% 50%",
+                        "repeat": "no-repeat",
+                        "size": "cover"
                     }
                 }
             }

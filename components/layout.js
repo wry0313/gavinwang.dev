@@ -2,7 +2,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import ParticlesNeural from "./particle-neural";
 import ParticlesLinks from './particle-links';
-import ParticlesExp from './particles-experiment';
+import ParticlesParallax from './particles-parallax';
+import ParticlesAmongUs from './particles-amongus';
 import Navbar from './navbar';
 
 import {useState} from 'react'
@@ -10,15 +11,24 @@ import {useState} from 'react'
 export const siteTitle = 'gavinwang.dev Personal Developer Blog Site';
 
 export default function Layout({ children, home }) {
-  const [background, setBackground] = useState(true)
+  const [backgroundIdx, setBackgroundIdx] = useState(0)
+  const maxIdx = 3;
 
   const changeBackground = () => {
-    setBackground(prevBackground => !prevBackground)
+    if (backgroundIdx < maxIdx) {
+      setBackgroundIdx(backgroundIdx+1)
+    } else {
+      setBackgroundIdx(0)
+    }
   }
 
   return (
     <div onClick={changeBackground} id="background-div" className={home ? 'gradient-animation' : ''}>
-      {home && (background ? <ParticlesNeural /> : <ParticlesLinks />)}
+      {home && (backgroundIdx === 0 && <ParticlesParallax /> )}
+      {home && (backgroundIdx === 1 && <ParticlesNeural /> )}
+      {home && (backgroundIdx === 2 && <ParticlesLinks /> )}
+      {home && (backgroundIdx === 3 && <ParticlesAmongUs /> )}
+
       {home && <Navbar />}
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />

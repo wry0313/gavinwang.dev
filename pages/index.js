@@ -27,7 +27,7 @@ export default function Home({ allPostsData }) {
         <GitHubButton></GitHubButton>
       </div> */}
       <div id="homepage sections" className="px-4 md:px-0 py-4"> 
-      <section className="select-none group front-page-card hover:bg-transparent hover:backdrop-blur-sm hover:text-white">
+      <section className="select-none group front-page-card bg-transparent backdrop-blur-sm text-white">
         <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
           🧑‍💻<Typing words={["gavinwang.dev", "machine learning", "web development", "mathematics", "journaling", "why tf r u still here"]} speed="300" />
         </h1>
