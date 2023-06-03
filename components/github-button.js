@@ -2,12 +2,13 @@ const github = "https://github.com/wry0313"
 import React from 'react';
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop';
-
+import useSound from 'use-sound';
 const GitHubButton = () => {
     const [style, trigger] = useBoop({ rotation: -30});
+    const [play] = useSound('/audios/pop.mp3', { volume: 0.1 })
 
     return (
-          <animated.span style={style}  onMouseEnter={trigger} >
+          <animated.span style={style}  onMouseEnter={trigger} onClick={play} >
           <a className="text-stone-100" href={github} target="_blank" rel="noreferrer">
               <svg
                   className={"h-5 w-5 sm:h-6 sm:w-6"}
