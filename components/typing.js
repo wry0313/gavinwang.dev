@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
+import useSound from 'use-sound';
 
+const soundList = ['/audios/typing/keyboard-type.mp3'];
 export default function Typing({ words, speed }) {
     const [displaytext, setDisplayText] = useState('');
     const [forward, setForward] = useState(true);
     const [wordIdx, setWordIdx] = useState(0)
     const [currentText, setCurrentText] = useState(words[0]);
     const [idx, setIdx] = useState(0)
+    const [play] = useSound('/audios/typing/keyboard-type.mp3', { volume: 0.2 })
+
+
     useEffect(() => {
 
         const type = () => {
@@ -16,6 +21,8 @@ export default function Typing({ words, speed }) {
                     setTimeout(() => {
                         setIdx(prevIdx => prevIdx + 1)
                         setDisplayText(prevText => prevText + currentText[idx])
+                        play()
+
                     }, (Math.random() * 0.7 + 0.3) * speed);
                 } else {
                     setTimeout(() => {
@@ -29,13 +36,14 @@ export default function Typing({ words, speed }) {
                 setTimeout(() => {
                     setIdx(prevIdx => prevIdx - 1)
                     setDisplayText(prevText => prevText.slice(0, -1))
+                    play()
                 }, 70);
             } else {
                 setTimeout(() => {
                     setForward(true);
-                    if (wordIdx+1 < words.length) {
+                    if (wordIdx + 1 < words.length) {
                         setWordIdx(wordIdx + 1)
-                        setCurrentText(words[wordIdx+1])
+                        setCurrentText(words[wordIdx + 1])
                     } else {
                         setWordIdx(0)
                         setCurrentText(words[0])
