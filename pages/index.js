@@ -33,7 +33,7 @@ export default function Home({ allPostsData }) {
         <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍️</p>
       </section>
 
-      <section className=" p-2 mt-4 front-page-card">
+      <section className="p-2 mt-4 front-page-card">
         <h2 className="text-[1.5rem] leading-[1.4]">📠 Blogs</h2>
         <ul className="list-none">
           {allPostsData.map((post) => (

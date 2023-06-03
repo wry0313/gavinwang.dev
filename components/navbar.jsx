@@ -24,10 +24,10 @@ export default function Navbar() {
                 <span className="block max-w-0 group-hover:max-w-[7ch] transition-all duration-500 h-[0.2rem] rounded bg-stone-100"></span>
             </Link>
             </animated.span>
+
             <GitHubButton />
             <TwitterButton />
             <PlayButton soundUrl={"/audios/minecraft-soundtrack.mp3"}></PlayButton>
-
         </nav>
     );
 }

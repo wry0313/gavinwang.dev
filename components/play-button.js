@@ -25,12 +25,10 @@ export default function PlayButton({ soundUrl }) {
         };
       }, [isPlaying]); //In JavaScript, closures are created when a function is defined and it captures the variables that are in scope at the time of its creation. In the case of the useEffect hook, the cleanup function inside it is created when the component is initially rendered, and it captures the values of the variables referenced within it.
 
-
-
     if (isPlaying) {
         //pause
         return <animated.span style={style} onMouseEnter={trigger}>
-            <svg className={" fill-stone-100 blur-[0.2px] -5 w-5 sm:h-6 sm:w-6"} viewBox="0 0 60 60" onClick={handlePlayerClick}>
+            <svg className={" fill-stone-100 blur-[0.2px] h-5 w-5 sm:h-6 sm:w-6"} viewBox="0 0 60 60" onClick={handlePlayerClick}>
                 <polygon points="0,0 15,0 15,60 0,60" />
                 <polygon points="25,0 40,0 40,60 25,60" />
             </svg>
