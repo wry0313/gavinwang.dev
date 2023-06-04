@@ -21,7 +21,7 @@ export default function Typing({ words, speed }) {
                     setTimeout(() => {
                         setIdx(prevIdx => prevIdx + 1)
                         setDisplayText(prevText => prevText + currentText[idx])
-                        play()
+                        // play()
 
                     }, (Math.random() * 0.7 + 0.3) * speed);
                 } else {
@@ -36,7 +36,7 @@ export default function Typing({ words, speed }) {
                 setTimeout(() => {
                     setIdx(prevIdx => prevIdx - 1)
                     setDisplayText(prevText => prevText.slice(0, -1))
-                    play()
+                    // play()
                 }, 70);
             } else {
                 setTimeout(() => {
@@ -51,8 +51,6 @@ export default function Typing({ words, speed }) {
                 }, 2500)
             }
         }
-
-
         if (forward) {
             type();
         } else {

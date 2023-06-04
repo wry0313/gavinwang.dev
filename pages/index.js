@@ -44,7 +44,7 @@ export default function Home({ allPostsData }) {
               <div className="text-gray-600 text-[0.95rem]">
                 <Date dateString={post.date} />
                 <div className="text-sm">
-                  {/* {post.wordCount} words {post.readTime} min read */}
+                  {post.wordCount} words {post.readTime} min read
                 </div>
               </div>
             </li>

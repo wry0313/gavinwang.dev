@@ -1,13 +1,11 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import ParticlesNeural from "./ParticlesNeural";
 import ParticlesLinks from './ParticleLinks';
 import ParticlesParallax from './ParticlesParallax';
 import ParticlesAmongUs from './ParticlesAmongus';
 import Navbar from './Navbar';
-
-
 import {useState} from 'react'
+
 
 export const siteTitle = 'gavinwang.dev Personal Developer Blog Site';
 
@@ -46,11 +44,7 @@ export default function Layout({ children, home }) {
       <div className="relative max-w-[48rem] mx-auto text-[19px] py-10">
       <main >{children}</main>
 
-      {!home && (
-        <div className="mt-[2rem] mb-[8rem] inline-block hover:scale-110 duration-300">
-         <Link className="text-sky-700" href="/">🔙 Back to home</Link>
-        </div>
-      )}
+      
     </div>
     </div>
   );

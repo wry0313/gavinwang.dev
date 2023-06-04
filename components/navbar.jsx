@@ -10,7 +10,6 @@ export default function Navbar() {
     const [style1, trigger1] = useBoop({ rotation: 5 });
     const [style2, trigger2] = useBoop({ rotation: 5 });
 
-
     return (
         <nav className="invisible lg:visible fixed left-0 bg-transparent backdrop-blur-sm backdrop-saturate-[0.9] flex flex-col items-start justify-center h-screen py-4 px-4 space-y-6">
 
