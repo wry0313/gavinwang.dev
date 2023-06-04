@@ -1,11 +1,11 @@
 import React from "react";
-import GitHubButton from "./GithubButton";
-import TwitterButton from "./TwitterButton";
-import SpotifyButton from "./SpotifyButton";
+import BlueGitHubButton from "./BlueGithubButton";
+import BlueTwitterButton from "./BlueTwitterButton";
+import BlueSpotifyButton from "./BlueSpotifyButton";
+import BluePlayButton from "./BluePlayButton";
 import Link from "next/link";
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop';
-import PlayButton from "./PlayButton";
 
 export default function TopNavbar() {
     const [style1, trigger1] = useBoop({ rotation: 5 });
@@ -27,10 +27,10 @@ export default function TopNavbar() {
             </animated.span>
 
 
-            <GitHubButton color="sky-500" />
-            <TwitterButton color="sky-500" />
-            <SpotifyButton color="sky-500" />
-            <PlayButton soundUrl={"/audios/minecraft-soundtrack.mp3"} color="sky-500"></PlayButton>
+            <BlueGitHubButton  />
+            <BlueTwitterButton  />
+            <BlueSpotifyButton  />
+            <BluePlayButton soundUrl={"/audios/minecraft-soundtrack.mp3"} ></BluePlayButton>
         </nav>
     );
 }

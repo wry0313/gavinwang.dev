@@ -3,8 +3,9 @@ import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop';
 import useSound from 'use-sound';
 
-export default function GitHubButton() {
+export default function BlueGitHubButton() {
   const github = 'https://github.com/wry0313';
+
   const [style, trigger] = useBoop({ rotation: -30 });
   const [play] = useSound('/audios/pop.mp3', { volume: 0.1 });
 
@@ -12,7 +13,7 @@ export default function GitHubButton() {
     <animated.span style={style} onClick={play} onMouseEnter={trigger}>
       <a href={github} target="_blank" rel="noreferrer">
         <svg
-          className={`fill-stone-100 h-5 w-5 sm:h-[1.6rem] sm:w-[1.6rem]`}
+          className={`fill-sky-500 h-5 w-5 sm:h-[1.6rem] sm:w-[1.6rem]`}
           viewBox="0 0 16 16"
         >
           <path

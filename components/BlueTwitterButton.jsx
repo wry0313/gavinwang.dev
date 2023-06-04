@@ -5,7 +5,7 @@ import useSound from 'use-sound';
 
 const twitter = 'https://twitter.com/GavinWang03';
 
-const TwitterButton = ({ color = 'stone-100' }) => {
+const BlueTwitterButton = () => {
   const [play] = useSound('/audios/pop.mp3', { volume: 0.1 });
   const [style, trigger] = useBoop({ rotation: -30 });
 
@@ -13,7 +13,7 @@ const TwitterButton = ({ color = 'stone-100' }) => {
     <animated.span style={style} onClick={play} onMouseEnter={trigger}>
       <a href={twitter} target="_blank" rel="noreferrer">
         <svg
-          className={`fill-stone-100 h-5 w-5 sm:h-7 sm:w-7`}
+          className={`fill-sky-500 h-5 w-5 sm:h-7 sm:w-7`}
           viewBox="0 0 20 20"
         >
           <path
@@ -25,4 +25,4 @@ const TwitterButton = ({ color = 'stone-100' }) => {
   );
 };
 
-export default TwitterButton;
+export default BlueTwitterButton;

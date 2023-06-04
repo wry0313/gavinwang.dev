@@ -31,7 +31,7 @@ export default function PlayButton({ soundUrl }) {
     return (
       <animated.span style={style} onMouseEnter={trigger}>
         <svg
-          className={`fill-stone-100 blur-[0.2px] h-5 w-5 sm:h-6 sm:w-6`}
+          className={`fill-sky-500 blur-[0.2px] h-5 w-5 sm:h-6 sm:w-6`}
           viewBox="0 0 60 60"
           onClick={handlePlayerClick}
         >
@@ -45,7 +45,7 @@ export default function PlayButton({ soundUrl }) {
     return (
       <animated.span style={style} onMouseEnter={trigger}>
         <svg
-          className={`fill-${color} blur-[0.2px] h-5 w-5 sm:h-6 sm:w-6`}
+          className={`fill-sky-500 blur-[0.2px] h-5 w-5 sm:h-6 sm:w-6`}
           viewBox="0 0 60 60"
           onClick={handlePlayerClick}
         >
