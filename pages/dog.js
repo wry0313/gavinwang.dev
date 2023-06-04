@@ -128,7 +128,7 @@ export default function Demo() {
                         </div>
                     </div>
                 </div>
-                  <Link className="block mt-[2rem] mb-[8rem] text-sky-900 font-bold" href="/">🔙 Back</Link>
+                  <Link className="inline-block mt-[2rem] mb-[8rem] text-sky-900 font-bold" href="/">🔙 Back</Link>
 
             </div>
           
