@@ -1,19 +1,7 @@
 // big thanks and credit to: https://github.com/HarryWangATX/website/blob/main/components/ScrollTopAndComment.tsx saved me a ton of time thanks
 
-import { useEffect, useState } from 'react'
-
 const ScrollTopAndComment = () => {
-  const [show, setShow] = useState(false)
-
-  useEffect(() => {
-    const handleWindowScroll = () => {
-      if (window.scrollY > 50) setShow(true)
-      else setShow(false)
-    }
-
-    window.addEventListener('scroll', handleWindowScroll)
-    return () => window.removeEventListener('scroll', handleWindowScroll)
-  }, [])
+ 
 
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })

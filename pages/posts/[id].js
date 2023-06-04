@@ -35,7 +35,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
     return (
         <>
          <TopNavbar></TopNavbar>
-        <div className="max-w-[72rem] mx-auto py-[0.3rem] px-5">
+        <div className="max-w-[72rem] mx-auto py-[3.3rem] px-5">
             <Head>
                 <title>{data.title}</title>
                 <link rel="shortcut icon" href="/images/favicon.ico" />
