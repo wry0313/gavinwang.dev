@@ -12,6 +12,7 @@
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.4.4",
+    "anchor-js": "^5.0.0",
     "date-fns": "^2.30.0",
     "esbuild": "^0.17.19",
     "gray-matter": "^4.0.3",
