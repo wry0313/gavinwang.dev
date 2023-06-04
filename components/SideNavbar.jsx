@@ -6,7 +6,7 @@ import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop';
 import PlayButton from "./PlayButton";
 
-export default function Navbar() {
+export default function SideNavbar() {
     const [style1, trigger1] = useBoop({ rotation: 5 });
     const [style2, trigger2] = useBoop({ rotation: 5 });
 

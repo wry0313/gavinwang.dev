@@ -12,12 +12,6 @@
   }
 }
 
-@layer components {
-  .front-page-card {
-  @apply bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn
-  }
-}
-
 .gradient-animation {
   background: radial-gradient( #bbcde5, #89bbfe,#639fab,#acedff, #639fab);
   background-size: 400% 400%;
