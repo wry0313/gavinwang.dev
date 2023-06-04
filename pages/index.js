@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/Layout';
+import HomeLayout, { siteTitle } from '../components/HomeLayout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/Date';
@@ -17,7 +17,7 @@ export async function getStaticProps() {
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <HomeLayout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
@@ -71,6 +71,6 @@ export default function Home({ allPostsData }) {
         </ul>
       </section>
       </div>
-    </Layout>
+    </HomeLayout>
   );
 }

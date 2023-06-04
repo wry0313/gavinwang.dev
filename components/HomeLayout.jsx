@@ -3,13 +3,13 @@ import ParticlesNeural from "./ParticlesNeural";
 import ParticlesLinks from './ParticleLinks';
 import ParticlesParallax from './ParticlesParallax';
 import ParticlesAmongUs from './ParticlesAmongus';
-import Navbar from './Navbar';
+import Navbar from './SideNavbar';
 import {useState} from 'react'
 
 
 export const siteTitle = 'gavinwang.dev Personal Developer Blog Site';
 
-export default function Layout({ children, home }) {
+export default function HomeLayout({ children }) {
   const [backgroundIdx, setBackgroundIdx] = useState(0)
   const maxIdx = 3;
 
@@ -22,7 +22,7 @@ export default function Layout({ children, home }) {
   }
 
   return (
-    <div onClick={changeBackground} id="background-div" className={home && (backgroundIdx === 0 || backgroundIdx === 2) ? 'gradient-animation' : ''}>
+    <div onClick={changeBackground} id="background-div" className={(backgroundIdx === 0 || backgroundIdx === 2) ? 'gradient-animation' : ''}>
       {(backgroundIdx === 0 && <ParticlesNeural /> )}
       {(backgroundIdx === 1 && <ParticlesParallax /> )}
       {(backgroundIdx === 2 && <ParticlesLinks /> )}

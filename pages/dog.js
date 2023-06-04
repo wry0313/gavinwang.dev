@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Layout from '../components/layout';
+import HomeLayout from '../components/HomeLayout';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -112,7 +112,7 @@ export default function Demo() {
 
 
     return (
-        <Layout>
+        <HomeLayout>
             <head>
                 
             </head>
@@ -144,7 +144,7 @@ export default function Demo() {
                 </div>
             </div>
 
-        </Layout>
+        </HomeLayout>
     );
 }
 
