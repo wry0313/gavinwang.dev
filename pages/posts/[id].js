@@ -1,4 +1,4 @@
-import Layout from '../../components/Layout';
+import ArticleLayout from '../../components/ArticleLayout';
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Head from 'next/head';
 import Date from '../../components/Date'
@@ -30,9 +30,9 @@ export async function getStaticProps({ params }) {
 
 export default function Post({ source, data, wordCount, readTime}) {
     const Content = useMemo(() => getMDXComponent(source), [source]);
-    const [style, trigger] = useBoop({ rotation: 20 });
+    const [style3, trigger3] = useBoop({ rotation: 20 });
     return (
-        <Layout>
+        <ArticleLayout>
             <Head>
                 <title>{data.title}</title>
             </Head>
@@ -45,17 +45,17 @@ export default function Post({ source, data, wordCount, readTime}) {
                     <div>{wordCount} words </div>
                     <div>{readTime} min read </div>
                 </div>
-                <div className='prose'>
+                <div className='prose '>
                     <Content components={MDXComponents}></Content>
                 </div>
             </article>
-            <animated.span style={style} onMouseEnter={trigger}>
-
-            <Link className="block mt-[2rem] mb-[8rem] text-sky-900 font-bold" href="/">🔙 Back</Link>
-
+            
+            </div>
+            <animated.span style={style3} onMouseEnter={()=>{trigger3(); console.log('hey')}}>
+                {/* WHY THE FUCK IS IT NOT WORKING */}
+                <Link className="block mt-[2rem] mb-[8rem] text-sky-900 font-bold" href="/">🔙 Back</Link>
             </animated.span>
-        </div>
-        </Layout>
+        </ArticleLayout>
     );
 }
 

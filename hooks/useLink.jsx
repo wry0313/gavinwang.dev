@@ -6,9 +6,8 @@ const useLink = () => {
   const [currentpath, setCurrentPath] = React.useState(
     undefined
   );
-  const basepath = router.asPath.split("?")[0];
+  const basepath = router.asPath.split("#")[0];
   React.useEffect(() => {
-    console.log("updated", basepath)
 
     setCurrentPath(router.pathname);
   }, []);

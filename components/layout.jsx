@@ -22,13 +22,13 @@ export default function Layout({ children, home }) {
   }
 
   return (
-<div onClick={changeBackground} id="background-div" className={home && (backgroundIdx === 0 || backgroundIdx === 2) ? 'gradient-animation' : ''}>
-      {home && (backgroundIdx === 0 && <ParticlesNeural /> )}
-      {home && (backgroundIdx === 1 && <ParticlesParallax /> )}
-      {home && (backgroundIdx === 2 && <ParticlesLinks /> )}
-      {home && (backgroundIdx === 3 && <ParticlesAmongUs /> )}
+    <div onClick={changeBackground} id="background-div" className={home && (backgroundIdx === 0 || backgroundIdx === 2) ? 'gradient-animation' : ''}>
+      {(backgroundIdx === 0 && <ParticlesNeural /> )}
+      {(backgroundIdx === 1 && <ParticlesParallax /> )}
+      {(backgroundIdx === 2 && <ParticlesLinks /> )}
+      {(backgroundIdx === 3 && <ParticlesAmongUs /> )}
 
-      {home && <Navbar />}
+       <Navbar />
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
@@ -41,11 +41,9 @@ export default function Layout({ children, home }) {
         />
       </Head>
       
-      <div className="relative max-w-[48rem] mx-auto text-[19px] py-10">
+      <div className="relative max-w-[48rem] mx-auto text-[22px] py-10">
       <main >{children}</main>
-
-      
-    </div>
-    </div>
+      </div>
+  </div>
   );
 }

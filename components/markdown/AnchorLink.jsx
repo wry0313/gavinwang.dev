@@ -38,10 +38,11 @@ const CustomLink = ({ anchor, size }) => {
   return (
     <>
       {link.pathname && (
-        <Link href={{...link.basepath, hash: anchor}} >
-          <LinkBase size={size} />
-        </Link>
-      )}
+  <Link href={`${link.basepath}#${anchor}`}>
+    <LinkBase size={size} />
+  </Link>
+)}
+
     </>
   );
 };

@@ -5,13 +5,13 @@ date: '2023-06-01'
 
 <span className="animate-pulse bold"> Gone are the days of static and dull webpages. </span> With just a few lines of code, you can add motion, transitions, and effects using CSS animations to bring your website to life. 
 
-# Why CSS Animations
+## Why CSS Animations
 
 Why did I choose CSS over other ways such as Javascript to make animations? Well, for starters, CSS animations are supported by all modern browsers, making them widely compatible. They also offer excellent performance since animations are handled by the browser's rendering engine, resulting in smooth and fluid motion. 
 
 Additionally, I will use my go-to CSS framework, [Tailwind CSS](https://tailwindcss.com/). It comes with a wide range of pre-built classes, making it a breeze to add or create animations.
 
-# Simple Demos 💡
+## Simple Demos 💡
 
 Here are some animations that Tailwind already provides: 
 1. **pulse**: <span className="animate-pulse"> ✨ </span>
@@ -22,11 +22,11 @@ Here are some animations that Tailwind already provides:
 ```html
 <span className="animate-bounce inline-block"> 🏀 </span>
 ```
-3. **spin**: <span class="animate-spin inline-block"> ⚽️ </span>
+3. **spin**: <span className="animate-spin inline-block"> ⚽️ </span>
 ```html
-<span class="animate-spin inline-block"> ⚽️ </span>
+<span className="animate-spin inline-block"> ⚽️ </span>
 ```
-4. make button **scaled** when hovered: <button class="bg-[#F5F7F7] shadow rounded-lg p-2 hover:scale-110 duration-300">
+4. make button **scaled** when hovered: <button className="bg-[#F5F7F7] shadow rounded-lg p-2 hover:scale-110 duration-300">
   <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" className="!text-black !hover:text-black">Click?</a> </button>
 
 ```html
@@ -36,8 +36,8 @@ Here are some animations that Tailwind already provides:
 
 As you can see in these four simple examples, you can quickly add animations to existing HTML components with Tailwind CSS pre-built animation classes. 
 
-# Customized Animations
-However, say that you want to add some new animation such as making a waving hand: <span class="animate-wiggle inline-block"> 👋 </span> ?
+## Customized Animations
+However, say that you want to add some new animation such as making a waving hand: <span className="animate-wiggle inline-block"> 👋 </span> ?
 
 To do this you can simply add this to your `global.css` file: 
 ```css
@@ -59,7 +59,7 @@ Frist, we defiend a keyframe called "wiggle". In CSS, a keyframe is a way to def
 
 Next, the css will apply the wiggle animation to any HTML tag with the `animate-wiggle` class. The animation will take 1s and it will repeat infinitely at a speed that starts slow and ends slow (denoted by `ease-in-out`).
 
-# Customize with Tailwind.Config
+## Customize with Tailwind.Config
 Tailwind.CSS also offers a good way to add customized animation to your `tailwind.config.js`file instead of them to the `global.css` file. 
 You can use this animation by adding the `animate-wiggle` class to your target.
 
@@ -81,7 +81,7 @@ module.exports = {
   },
 }
 ```
-# Bonus: Circular Path Animation
+## Bonus: Circular Path Animation
 Now let's look at another example: how to make a animation that goes in a circular path? like this:<span className="animate-moveCircle inline-block">✍️</span>
 
 Here is the code: 
@@ -106,6 +106,6 @@ module.exports = {
 
 This is actually kind of tricky, so I won't attempt to explain it here. But you should definitely check out how it works [here](https://www.useragentman.com/blog/2013/03/03/animating-circular-paths-using-css3-transitions/). Additionally this [stack overflow linkk](https://stackoverflow.com/questions/38877163/why-rotate0deg-matters?rq=1) would also help. 
 
-# Conclusion
+## Conclusion
 That's it! After reading this article, you should be able to skillfully use CSS animation and understand how to do it with the Tailwind CSS framework. Now, take a look at your own website and ask yourself if there are any ways to use CSS animation to bring life and interactivity. Go ahead and explore and experiment with CSS animations!
 <span className="animate-pulse">✨🌟</span>
