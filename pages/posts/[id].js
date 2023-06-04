@@ -59,8 +59,6 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
                 </div>
 
 
-
-
             </div>
             <animated.span style={style3} onMouseEnter={() => { trigger3(); console.log('hey') }}>
                 {/* WHY THE FUCK IS IT NOT WORKING */}
