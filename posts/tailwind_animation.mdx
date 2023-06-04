@@ -3,6 +3,8 @@ title: '💥 Intro to Tailwind CSS Animations'
 date: '2023-06-01'
 ---
 
+import Typing from '../components/Typing';
+
 <span className="animate-pulse bold"> Gone are the days of static and dull webpages. </span>
  With just a few lines of code, you can add motion, transitions, and effects using CSS animations to bring your website to life. 
 
@@ -24,18 +26,7 @@ Here are some animations that Tailwind already provides:
 <span class="animate-spin inline-block"> ⚽️ </span>
 ```
 4. make button **scaled** when hovered: <button class="bg-[#F5F7F7] shadow rounded-lg p-2 hover:scale-110 duration-300">
-  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" className="no-a-css">Click?</a>
-</button>
-
-<style>
-  .no-a-css {
-    text-decoration: none;
-    color: black;
-  }
-  .no-a-css:hover {
-    color: black;
-  }
-</style>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" className="!text-black !hover:text-black">Click?</a> </button>
 
 ```html
 <button className="bg-[#F5F7F7] shadow rounded-lg p-2 hover:scale-110 duration-300"> Click? </button>

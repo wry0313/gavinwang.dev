@@ -2,9 +2,9 @@
 
 module.exports = {
   content: [
-    "./app/**/*.{js,ts,jsx,tsx,md}",
-    "./pages/**/*.{js,ts,jsx,tsx,md}",
-    "./components/**/*.{js,ts,jsx,tsx,md}",
+    "./app/**/*.{js,ts,jsx,tsx,md,mdx}",
+    "./pages/**/*.{js,ts,jsx,tsx,md, mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,md, mdx}",
     "./posts/**/*.{js,ts,jsx,tsx,md,mdx}" // for tailwind css animation post
   ],
   theme: {

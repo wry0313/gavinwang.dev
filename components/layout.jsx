@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import ParticlesNeural from "./particle-neural";
-import ParticlesLinks from './particle-links';
-import ParticlesParallax from './particles-parallax';
-import ParticlesAmongUs from './particles-amongus';
-import Navbar from './navbar';
+import ParticlesNeural from "./ParticlesNeural";
+import ParticlesLinks from './ParticleLinks';
+import ParticlesParallax from './ParticlesParallax';
+import ParticlesAmongUs from './ParticlesAmongus';
+import Navbar from './Navbar';
+
 
 import {useState} from 'react'
 

@@ -30,14 +30,7 @@ export default function Home() {
 run `npm run dev` and go to [http://localhost:3000/md](http://localhost:3000/md)
 you should see this on your page:
 
-<h1 className="no-css">Hello,<em>World</em>!</h1>
-<style>
-  .no-css {
-    all: initial;
-    font-size: 32px;
-    font-weight: bold;
-  }
-</style>
+<h1 className="!text-3xl !font-bold [all:initial]">Hello,<em>World</em>!</h1>
 
 ## Dynamic Routes for Your Markdown Files
 
@@ -153,9 +146,11 @@ export async function getStaticProps({ params }) {
 }
 ```
 
+
+
 Now if you go to [http://localhost:3000/posts/README](http://localhost:3000/posts/README), you should see this: 🎊🥳
 
-![react markdown showcase {{ w: 400, h: 400 }}](/article/react_markdown_showcase.png)
+![react markdown showcase {{ w: 401, h: 400 }}](/article/react_markdown_showcase.png)
 
 ## Better Markdown = Markdown + Tailwind CSS
 Now let's give the plain HTML some typographic defaults with the Tailwind CSS plugin [typography](https://tailwindcss.com/docs/typography-plugin). If you don't already have TailwindCSS😱, refer to this [setup guide](https://nextjs.org/docs/app/building-your-application/styling/tailwind-css).

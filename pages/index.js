@@ -1,9 +1,9 @@
 import Head from 'next/head';
-import Layout, { siteTitle } from '../components/layout';
+import Layout, { siteTitle } from '../components/Layout';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
-import Date from '../components/date';
-import Typing from '../components/typing';
+import Date from '../components/Date';
+import Typing from '../components/Typing';
 
 
 export async function getStaticProps() {
@@ -16,12 +16,11 @@ export async function getStaticProps() {
 }
 
 export default function Home({ allPostsData }) {
-
+  console.log("render home page");
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
-        
       </Head>
       <div id="homepage sections" className="px-4 md:px-0 py-4"> 
       <section className="select-none group front-page-card bg-transparent backdrop-blur-[3px] text-white">
@@ -45,7 +44,7 @@ export default function Home({ allPostsData }) {
               <div className="text-gray-600 text-[0.95rem]">
                 <Date dateString={post.date} />
                 <div className="text-sm">
-                  {post.wordCount} words {post.readTime} min read
+                  {/* {post.wordCount} words {post.readTime} min read */}
                 </div>
               </div>
             </li>

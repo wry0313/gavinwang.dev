@@ -1,10 +1,10 @@
 import React from "react";
-import GitHubButton from "./github-button";
-import TwitterButton from "./twitter-button";
+import GitHubButton from "./GithubButton";
+import TwitterButton from "./TwitterButton";
 import Link from "next/link";
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop';
-import PlayButton from "./play-button";
+import PlayButton from "./PlayButton";
 
 export default function Navbar() {
     const [style1, trigger1] = useBoop({ rotation: 5 });
