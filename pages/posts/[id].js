@@ -34,7 +34,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
 
     const [style, trigger] = useBoop({ rotation: 10, timing: 80 });
     return (
-        <div className="max-w-[64rem] mx-auto py-10 px-5">
+        <div className="max-w-[72rem] mx-auto py-10 px-5">
             <Head>
                 <title>{data.title}</title>
                 <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -77,7 +77,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
 
                     </div>
 
-                    <div id="right section" className='ml-[4rem] mt-4'>
+                    <div id="right section" className='max-w-[30%] ml-[4rem] mt-4'>
                         <div className='sticky top-10 space-y-4'>
                             <TableOfContents headings={headings} />
                             <ScrollTopAndComment />
