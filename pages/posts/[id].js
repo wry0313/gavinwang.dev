@@ -15,8 +15,7 @@ import ScrollTopAndComment from '../../components/ScrollTopAndComment';
 
 import Giscus from '@giscus/react';
 
-
-
+import TopNavbar from '../../components/TopNavbar'
 
 export async function getStaticProps({ params }) {
 
@@ -34,7 +33,9 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
 
     const [style, trigger] = useBoop({ rotation: 10, timing: 80 });
     return (
-        <div className="max-w-[72rem] mx-auto py-10 px-5">
+        <>
+         <TopNavbar></TopNavbar>
+        <div className="max-w-[72rem] mx-auto py-[0.3rem] px-5">
             <Head>
                 <title>{data.title}</title>
                 <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -44,12 +45,12 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <h1 className="text-[3.4rem] leading-[1.3] font-extrabold text-sky-900">{data.title}</h1>
-            <hr className="h-[3.5px] my-2 bg-slate-300"></hr>
+            <hr className="h-[3.5px] my-2 bg-emerald-900"></hr>
             <div className="flex flex-col">
                 <div id="article-by-content-table" className=" flex flex-row">
                     <div id="left section">
 
-                        <div id="article data" className="flex align-center text-base mb-8 text-slate-800 space-x-3">
+                        <div id="article data" className="flex align-center text-base mb-8 text-emerald-800 space-x-3">
                             <Date dateString={data.date} />
                             <div>{wordCount} words </div>
                             <div>{readTime} min read </div>
@@ -78,7 +79,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
                     </div>
 
                     <div id="right section" className='max-w-[30%] ml-[4rem] mt-4'>
-                        <div className='sticky top-10 space-y-4'>
+                        <div className='sticky top-[3.5rem;] space-y-4'>
                             <TableOfContents headings={headings} />
                             <ScrollTopAndComment />
                         </div>
@@ -95,6 +96,8 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
                 </div>
             </div>
         </div>
+        </>
+       
     );
 }
 

@@ -56,7 +56,7 @@ const Heading = ({ size, children, id }) => {
     
   return (
     <>
-      <DynamicHeading id={id} className={"group relative"}>
+      <DynamicHeading id={id} className={"group sticky"}>
         <CustomLink anchor={id} size={size} />
         {children}
       </DynamicHeading>

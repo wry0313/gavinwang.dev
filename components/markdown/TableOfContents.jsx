@@ -1,7 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import useLink from "../../hooks/useLink";
-import ScrollTopAndComment from "../ScrollTopAndComment";
 
 export default function TableOfContents({ headings }) {
   const link = useLink();
