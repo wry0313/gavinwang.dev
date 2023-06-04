@@ -5,6 +5,7 @@ import Link from "next/link";
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop';
 import PlayButton from "./PlayButton";
+import SpotifyButton from "./SpotifyButton";
 
 export default function SideNavbar() {
     const [style1, trigger1] = useBoop({ rotation: 5 });
@@ -26,7 +27,8 @@ export default function SideNavbar() {
 
             <GitHubButton />
             <TwitterButton />
-            <PlayButton soundUrl={"/audios/minecraft-soundtrack.mp3"}></PlayButton>
+            <SpotifyButton />
+            {/* <PlayButton soundUrl={"/audios/minecraft-soundtrack.mp3"}></PlayButton> */}
         </nav>
     );
 }

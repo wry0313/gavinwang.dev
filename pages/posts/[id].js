@@ -79,7 +79,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
                     </div>
 
                     <div id="right section" className='max-w-[30%] ml-[4rem] mt-4'>
-                        <div className='sticky top-[3.5rem;] space-y-4'>
+                        <div className='sticky top-[1rem;] space-y-4 z-20'>
                             <TableOfContents headings={headings} />
                             <ScrollTopAndComment />
                         </div>

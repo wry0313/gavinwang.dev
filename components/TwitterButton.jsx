@@ -13,7 +13,7 @@ const TwitterButton = ({ color = 'stone-100' }) => {
     <animated.span style={style} onClick={play} onMouseEnter={trigger}>
       <a href={twitter} target="_blank" rel="noreferrer">
         <svg
-          className={`fill-${color} h-5 w-5 sm:h-6 sm:w-6`}
+          className={`fill-${color} h-5 w-5 sm:h-7 sm:w-7`}
           viewBox="0 0 20 20"
         >
           <path

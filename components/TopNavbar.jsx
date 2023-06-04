@@ -1,6 +1,7 @@
 import React from "react";
 import GitHubButton from "./GithubButton";
 import TwitterButton from "./TwitterButton";
+import SpotifyButton from "./SpotifyButton";
 import Link from "next/link";
 import { animated } from 'react-spring';
 import useBoop from '../hooks/useBoop';
@@ -28,6 +29,7 @@ export default function TopNavbar() {
 
             <GitHubButton color="sky-500" />
             <TwitterButton color="sky-500" />
+            <SpotifyButton color="sky-500" />
             <PlayButton soundUrl={"/audios/minecraft-soundtrack.mp3"} color="sky-500"></PlayButton>
         </nav>
     );

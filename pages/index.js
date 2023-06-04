@@ -4,6 +4,7 @@ import ParticlesLinks from '../components/ParticleLinks';
 import ParticlesParallax from '../components/ParticlesParallax';
 import ParticlesAmongUs from '../components/ParticlesAmongus';
 import Navbar from '../components/SideNavbar';
+import TopNavbar from '../components/TopNavbar';
 import { useState } from 'react';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
@@ -43,7 +44,7 @@ export default function Home({ allPostsData }) {
       {(backgroundIdx === 2 && <ParticlesLinks />)}
       {(backgroundIdx === 3 && <ParticlesAmongUs />)}
 
-      <Navbar />
+      
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
@@ -57,23 +58,21 @@ export default function Home({ allPostsData }) {
         />
       </Head>
 
-      <div className="relative max-w-[48rem] mx-auto text-[22px] py-10">
-
-     
-
-      <div id="homepage sections" className="px-4 md:px-0 w-[52rem] mx-auto py-4 ">
+      <div id="make sure width is not full so can boop" className="relative mx-auto text-[18x] md:text-[21px] py-4">
+      <Navbar />
+      <div id="homepage sections" className="p-4 md:px-0 w-[28rem] sm:w-[40rem] md:w-[50rem] mx-auto ">
         <section className="select-none group  bg-transparent backdrop-blur-[3px] text-white bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
           <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
             🧑‍💻<Typing words={["gavinwang.dev", "machine learning", "web development", "mathematics", "journaling", "hmu on twitter :)"]} speed="300" />
           </h1>
-          <section className="text-[1.6rem]">
+          <section className="text-[1.3rem] md:text-[1.6rem]">
             <p className="inline">Hi there! </p>
             <div className="inline-block animate-wiggle text-[1.5rem]"> 👋 </div>
             <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍️</p>
           </section>
         </section>
 
-        <section className="p-3 mt-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
+        <section className="p-4 mt-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
           <h2 className="text-[1.5rem] leading-[1.4]">📠 Blogs</h2>
           <ul className="list-none">
             {allPostsData.map((post) => (
@@ -93,7 +92,7 @@ export default function Home({ allPostsData }) {
           </ul>
         </section>
 
-        <section className="mt-4 p-3  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
+        <section className="mt-4 p-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
           <h2 className="text-[1.5rem] leading-[1.4]">💾 Projects</h2>
           <ul className="list-none">
             <li className="mt-[1.25rem] leading-2">

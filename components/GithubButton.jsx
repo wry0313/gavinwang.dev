@@ -12,7 +12,7 @@ export default function GitHubButton({ color = 'stone-100' }) {
     <animated.span style={style} onClick={play} onMouseEnter={trigger}>
       <a href={github} target="_blank" rel="noreferrer">
         <svg
-          className={`fill-${color} h-5 w-5 sm:h-6 sm:w-6`}
+          className={`fill-${color} h-5 w-5 sm:h-[1.6rem] sm:w-[1.6rem]`}
           viewBox="0 0 16 16"
         >
           <path
