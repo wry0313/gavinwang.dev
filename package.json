@@ -9,8 +9,14 @@
     "child_process": false
   },
   "dependencies": {
+    "@mdx-js/loader": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
+    "@next/mdx": "^13.4.4",
     "date-fns": "^2.30.0",
+    "esbuild": "^0.17.19",
     "gray-matter": "^4.0.3",
+    "highlight.js": "^11.8.0",
+    "mdx-bundler": "^9.2.1",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -20,6 +26,7 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-tsparticles": "^2.9.3",
     "rehype-raw": "^6.1.1",
+    "remark-gfm": "^3.0.1",
     "tsparticles": "^2.9.3",
     "tsparticles-engine": "^2.9.3",
     "use-sound": "^4.0.1"

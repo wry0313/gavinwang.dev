@@ -8,7 +8,7 @@ import {oneLight} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 import rehypeRaw from 'rehype-raw';
 import Image from 'next/image';
 
-
+import remarkGfm from "remark-gfm";
 
 export default function Post({ content, data, wordCount, readTime }) {
     return (
@@ -29,6 +29,7 @@ export default function Post({ content, data, wordCount, readTime }) {
                 <ReactMarkdown className="prose"
                     children={content}
                     rehypePlugins={[rehypeRaw]}
+                    remarkPlugins={[remarkGfm]}
                     components={{
                         code({node, inline, className, children, ...props}) {
                           const match = /language-(\w+)/.exec(className || '')
