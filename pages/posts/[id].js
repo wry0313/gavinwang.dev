@@ -34,7 +34,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
 
     const [style, trigger] = useBoop({ rotation: 10, timing: 80 });
     return (
-        <div className="max-w-[64rem] mx-auto py-10">
+        <div className="max-w-[64rem] mx-auto py-10 px-5">
             <Head>
                 <title>{data.title}</title>
                 <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -45,7 +45,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
             </Head>
             <h1 className="text-[3.4rem] leading-[1.3] font-extrabold text-sky-900">{data.title}</h1>
             <hr className="h-[3.5px] my-2 bg-slate-300"></hr>
-            <div className="px-5 flex flex-col">
+            <div className="flex flex-col">
                 <div id="article-by-content-table" className=" flex flex-row">
                     <div id="left section">
 
@@ -61,7 +61,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
                         <Giscus
                             id="comments"
                             repo="wry0313/gavinwang.dev"
-                            repoId="R_kgDOJdYNaA="
+                            repoId="R_kgDOJdYNaA"
                             category="General"
                             categoryId="DIC_kwDOJdYNaM4CW-BH"
                             mapping="pathname"
