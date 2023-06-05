@@ -29,18 +29,3 @@
     background-position: 0% 50%;
   }
 }
-
-
-html,
-body {
-  margin: 0;
-  height: 120%;
-}
-
-#__next {
-  height: 100%;
-}
-
-#background-div {
-  height:120%
-}

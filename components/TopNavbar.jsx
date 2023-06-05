@@ -12,7 +12,7 @@ export default function TopNavbar() {
     const [style2, trigger2] = useBoop({ rotation: 5 });
 
     return (
-        <nav className="fixed content-center top-0 left-0 right-0 space-x-6 flex flex-row bg-transparent backdrop-blur-[3px] backdrop-saturate-[2] py-2 pl-2 z-10">
+        <nav className="sticky select-noen content-center top-0 left-0 right-0 space-x-6 flex flex-row bg-transparent backdrop-blur-[3px] backdrop-saturate-[2] py-2 pl-2 z-10">
 
             <animated.span style={style1} onMouseEnter={trigger1}>
                 <Link href="/" className="transition duration-300 text-sky-500 font-bold text-xl">

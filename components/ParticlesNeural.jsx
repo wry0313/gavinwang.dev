@@ -40,8 +40,8 @@ export default function ParticlesNeural () {
                             quantity: 1,
                         },
                         repulse: {
-                            distance: 100,
-                            duration: 10,
+                            distance: 200,
+                            duration: 1,
                         },
                     },
                 },
@@ -51,7 +51,7 @@ export default function ParticlesNeural () {
                     },
                     links: {
                         color: "#ffffff",
-                        distance: 1000,
+                        distance: 1200,
                         enable: true,
                         opacity: 0.4  ,
                         width: 8,
@@ -74,7 +74,7 @@ export default function ParticlesNeural () {
                             enable: true,
                             area: 800,
                         },
-                        value: 15,
+                        value:25
                     },
                     opacity: {
                         value: 0.6,

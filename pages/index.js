@@ -4,13 +4,12 @@ import ParticlesLinks from '../components/ParticleLinks';
 import ParticlesParallax from '../components/ParticlesParallax';
 import ParticlesAmongUs from '../components/ParticlesAmongus';
 import Navbar from '../components/SideNavbar';
-import TopNavbar from '../components/TopNavbar';
 import { useState } from 'react';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/Date';
 import Typing from '../components/Typing';
-
+import Contact from '../components/ContactMeForm';
 
 const siteTitle = 'Gavin Wang Personal Developer Blog Site';
 
@@ -29,22 +28,23 @@ export default function Home({ allPostsData }) {
   const maxIdx = backgrounds.length - 1;
 
 
-  const changeBackground = () => {
+  const changeBackground = (e) => {
+    if (e.target.id === 'background-div') {
     if (backgroundIdx < maxIdx) {
       setBackgroundIdx(backgroundIdx + 1);
     } else {
       setBackgroundIdx(0);
     }
+  }
   };
 
   return (
-    <div onClick={changeBackground} id="background-div" className={(backgroundIdx === 0 || backgroundIdx === 2) ? 'gradient-animation' : ''}>
-      {(backgroundIdx === 0 && <ParticlesNeural />)}
-      {(backgroundIdx === 1 && <ParticlesParallax />)}
-      {(backgroundIdx === 2 && <ParticlesLinks />)}
+    <div className={(backgroundIdx === 1 || backgroundIdx === 2) ? 'gradient-animation' : ''}>
+      {(backgroundIdx === 0 && <ParticlesParallax />)}
+      {(backgroundIdx === 1 && <ParticlesLinks />)}
+      {(backgroundIdx === 2 && <ParticlesNeural />)}
       {(backgroundIdx === 3 && <ParticlesAmongUs />)}
 
-      
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
@@ -58,7 +58,7 @@ export default function Home({ allPostsData }) {
         />
       </Head>
 
-      <div id="make sure width is not full so can boop" className="relative mx-auto text-[18x] md:text-[21px] py-4">
+      <div onClick={changeBackground} id="background-div"  className="relative mx-auto text-[18x] md:text-[21px] py-4">
       <Navbar />
       <div id="homepage sections" className="p-4 md:px-0 w-[28rem] sm:w-[40rem] md:w-[50rem] mx-auto ">
         <section className="select-none group  bg-transparent backdrop-blur-[3px] text-white bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
@@ -73,7 +73,7 @@ export default function Home({ allPostsData }) {
         </section>
 
         <section className="p-4 mt-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
-          <h2 className="text-[1.5rem] leading-[1.4]">📠 Blogs</h2>
+          <h2 className="select-none text-[1.5rem] leading-[1.4]">📠 Blogs</h2>
           <ul className="list-none">
             {allPostsData.map((post) => (
               <li className="mt-[1.25rem]" key={post.id}>
@@ -81,7 +81,7 @@ export default function Home({ allPostsData }) {
                   {post.title}
                 </Link>
                 <br />
-                <div className="text-gray-600 text-[0.95rem]">
+                <div className="select-none text-stone-500 text-[0.95rem]">
                   <Date dateString={post.date} />
                   <div className="text-sm">
                     {post.wordCount} words {post.readTime} min read
@@ -92,7 +92,7 @@ export default function Home({ allPostsData }) {
           </ul>
         </section>
 
-        <section className="mt-4 p-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
+        <section className="select-none mt-4 p-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
           <h2 className="text-[1.5rem] leading-[1.4]">💾 Projects</h2>
           <ul className="list-none">
             <li className="mt-[1.25rem] leading-2">
@@ -108,6 +108,11 @@ export default function Home({ allPostsData }) {
             </li>
           </ul>
         </section>
+          
+          <section className='mt-4 p-4  w-fit shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn"'> 
+          <Contact></Contact>
+          </section>
+        
       </div>
       </div>
     </div>
