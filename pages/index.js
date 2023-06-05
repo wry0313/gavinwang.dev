@@ -58,14 +58,14 @@ export default function Home({ allPostsData }) {
         />
       </Head>
 
-      <div onClick={changeBackground} id="background-div"  className="relative mx-auto text-[18x] md:text-[21px] py-4">
+      <div onClick={changeBackground} id="background-div"  className="relative mx-auto text-[18px] py-4">
       <Navbar />
-      <div id="homepage sections" className="p-4 md:px-0 w-[28rem] sm:w-[40rem] md:w-[50rem] mx-auto ">
+      <div id="homepage sections" className="p-4 md:px-0 w-[28rem] sm:w-[40rem] md:w-[44rem] mx-auto ">
         <section className="select-none group  bg-transparent backdrop-blur-[3px] text-white bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
           <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
             🧑‍💻<Typing words={["gavinwang.dev", "machine learning", "web development", "mathematics", "journaling", "hmu on twitter :)"]} speed="300" />
           </h1>
-          <section className="text-[1.3rem] md:text-[1.6rem]">
+          <section className="text-[1.3rem] md:text-[1.5rem]">
             <p className="inline">Hi there! </p>
             <div className="inline-block animate-wiggle text-[1.5rem]"> 👋 </div>
             <p className="inline"> My name is Gavin and I'll be sharing what I've learned about machine learning 🎛️, web dev 🌐, and all things coding 💻 on this blog site ✍️</p>
