@@ -27,7 +27,6 @@ export default function Home({ allPostsData }) {
   const backgrounds = ['ParticlesNeural', 'ParticlesParallax', 'ParticlesLinks', 'ParticlesAmongUs'];
   const maxIdx = backgrounds.length - 1;
 
-
   const changeBackground = (e) => {
     if (e.target.id === 'background-div') {
     if (backgroundIdx < maxIdx) {
@@ -39,7 +38,7 @@ export default function Home({ allPostsData }) {
   };
 
   return (
-    <div className={(backgroundIdx === 1 || backgroundIdx === 2) ? 'gradient-animation' : ''}>
+    <div className={(backgroundIdx === 1 || backgroundIdx === 2) ? 'gradient-animation scroll-behavior:smooth' : 'scroll-behavior:smooth'}>
       {(backgroundIdx === 0 && <ParticlesParallax />)}
       {(backgroundIdx === 1 && <ParticlesLinks />)}
       {(backgroundIdx === 2 && <ParticlesNeural />)}
@@ -72,7 +71,7 @@ export default function Home({ allPostsData }) {
           </section>
         </section>
 
-        <section className="p-4 mt-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
+        <section id="blogs-div" className="p-4 mt-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
           <h2 className="select-none text-[1.5rem] leading-[1.4]">📠 Blogs</h2>
           <ul className="list-none">
             {allPostsData.map((post) => (
@@ -92,7 +91,7 @@ export default function Home({ allPostsData }) {
           </ul>
         </section>
 
-        <section className="select-none mt-4 p-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
+        <section id="projects-div" className="select-none mt-4 p-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn">
           <h2 className="text-[1.5rem] leading-[1.4]">💾 Projects</h2>
           <ul className="list-none">
             <li className="mt-[1.25rem] leading-2">

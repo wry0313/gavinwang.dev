@@ -32,13 +32,14 @@ const LinkBase = forwardRef(({ size, href, onClick }, ref) => {
   );
 });
 
+
 const CustomLink = ({ anchor, size }) => {
   const link = useLink();
 
   return (
     <>
       {link.pathname && (
-  <Link href={`${link.basepath}#${anchor}`}>
+      <Link scroll={false}  href={`${link.basepath}#${anchor}`}>
     <LinkBase size={size} />
   </Link>
 )}

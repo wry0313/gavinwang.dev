@@ -10,18 +10,27 @@ import useBoop from '../hooks/useBoop';
 export default function TopNavbar() {
     const [style1, trigger1] = useBoop({ rotation: 5 });
     const [style2, trigger2] = useBoop({ rotation: 5 });
+    const [style3, trigger3] = useBoop({ rotation: 5 });
+
 
     return (
         <nav className="sticky select-noen content-center top-0 left-0 right-0 space-x-6 flex flex-row bg-transparent backdrop-blur-[3px] backdrop-saturate-[2] py-2 pl-2 z-10">
+            
+            <animated.span style={style3} onMouseEnter={trigger3}>
+                <Link href="/" className="transition duration-300 text-sky-500 font-bold text-xl">
+                    ~/home
+                </Link>
+            </animated.span>
+
 
             <animated.span style={style1} onMouseEnter={trigger1}>
-                <Link href="/" className="transition duration-300 text-sky-500 font-bold text-xl">
+                <Link href="/#blogs-div" className="transition duration-300 text-sky-500 font-bold text-xl">
                     ~/blogs
                 </Link>
             </animated.span>
 
             <animated.span style={style2} onMouseEnter={trigger2}>
-                <Link href="/" className="transition duration-300 text-sky-500 font-bold text-xl">
+                <Link href="/#projects-div" className="transition duration-300 text-sky-500 font-bold text-xl">
                     ~/projects
                 </Link>
             </animated.span>

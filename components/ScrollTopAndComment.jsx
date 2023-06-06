@@ -11,9 +11,7 @@ const ScrollTopAndComment = () => {
     
   }
   return (
-    <div
-      className={` flex  gap-3 `}
-    >
+    <div className={"flex gap-3"}>
       <button
         aria-label="Scroll To Comment"
         type="button"

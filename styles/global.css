@@ -29,3 +29,13 @@
     background-position: 0% 50%;
   }
 }
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}
+
+:target {
+  scroll-margin-top: 100px;
+}

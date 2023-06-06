@@ -16,7 +16,7 @@ export default function TableOfContents({ headings }) {
           const indentStyle = hashCount === 3 ? { marginLeft: "1rem", listStyle: "disc" } : {};
           return (
             <li key={id++} style={indentStyle}>
-              <Link className="hover:text-slate-500" href={`${link.basepath}#${anchor}`}>
+              <Link scroll={false} className="hover:text-slate-500" href={`${link.basepath}#${anchor}`}>
                 {text}
               </Link>
             </li>

@@ -1,13 +1,13 @@
 .prose :where(h1):not(:where([class~="not-prose"] *)) {
-  @apply font-bold text-sky-900 text-[2.5rem] mt-[2rem] ;
+  @apply font-bold text-sky-700 text-[2.5rem] mt-[2rem] ;
 }
 
 .prose :where(h2):not(:where([class~="not-prose"] *)) {
-  @apply font-bold text-sky-900 text-[2.1rem] mt-[2rem] ;
+  @apply font-bold text-sky-700 text-[2.1rem] mt-[2rem] scroll-mt-1;
 }
 
 .prose :where(h3):not(:where([class~="not-prose"] *)) {
-  @apply font-bold text-sky-900 text-[1.6rem] mt-[2rem] ;
+  @apply font-bold text-sky-700 text-[1.6rem] mt-[2rem] ;
 }
 
 
@@ -20,3 +20,7 @@
 }
 
 
+
+.prose *[id] {
+  scroll-margin-top: 3rem;
+}
