@@ -1,21 +1,21 @@
 // big thanks and credit to: https://github.com/HarryWangATX/website/blob/main/components/ScrollTopAndComment.tsx saved me a ton of time thanks
 
-const ScrollTopAndComment = () => {
+const ScrollTopAndComment = ({handleClick}) => {
  
 
   const handleScrollTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
-  const handleScrollToComment = () => {
-    document.getElementById('comment').scrollIntoView({ behavior: 'smooth', block:'end' })
+  // const handleScrollToComment = () => {
+  //   document.getElementById('comment').scrollIntoView({ behavior: 'smooth', block:'end' })
     
-  }
+  // }
   return (
     <div className={"flex gap-3"}>
       <button
         aria-label="Scroll To Comment"
         type="button"
-        onClick={handleScrollToComment}
+        onClick={handleClick}
         className="rounded-full bg-gray-200 p-2 text-gray-500 transition-all hover:bg-gray-300 dark:bg-gray-700 dark:text-gray-400 dark:hover:bg-gray-600"
       >
         <svg className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

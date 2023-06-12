@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Date from '../../components/Date'
 
 import Link from 'next/link'
-import { useMemo } from 'react';
+import { useMemo, useRef } from 'react';
 import { getMDXComponent } from 'mdx-bundler/client';
 import MDXComponents from "../../components/markdown/MDXComponents";
 import TableOfContents from '../../components/markdown/TableOfContents';
@@ -31,6 +31,12 @@ export async function getStaticProps({ params }) {
 export default function Post({ source, data, wordCount, readTime, headings }) {
     const Content = useMemo(() => getMDXComponent(source), [source]);
 
+    const comment = useRef();
+    const scrollToComment = () => {
+        comment.current.scrollIntoView()
+
+    }
+
     const [style, trigger] = useBoop({ rotation: 10, timing: 80 });
     return (
         <>
@@ -49,7 +55,6 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
             <div className="flex flex-col">
                 <div id="article-by-content-table" className=" flex flex-row">
                     <div id="left section">
-
                         <div id="article data" className="flex align-center text-base mb-8 text-emerald-800 space-x-3">
                             <Date dateString={data.date} />
                             <div>{wordCount} words </div>
@@ -58,7 +63,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
                         <article className='prose'>
                             <Content components={MDXComponents}></Content>
                         </article>
-                        <div id="comment" className="mt-10 mb-2">
+                        <div ref={comment} className="mt-10 mb-2">
                         <Giscus
                             id="comments"
                             repo="wry0313/gavinwang.dev"
@@ -81,7 +86,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
                     <div id="right section" className='max-w-[30%] ml-[4rem] mt-4'>
                         <div className='sticky top-[1rem;] space-y-4 z-20 invisible md:visible'>
                             <TableOfContents headings={headings} />
-                            <ScrollTopAndComment />
+                            <ScrollTopAndComment handleClick={scrollToComment}/>
                         </div>
 
                     </div>
