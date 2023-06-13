@@ -43,7 +43,7 @@ const Contact = () => {
         <form ref={formRef} onSubmit={submitContact}>
           <input
             required
-            placeholder="what yo name*"
+            placeholder="name*"
             type="text"
             minLength={3}
             maxLength={25}
@@ -51,14 +51,14 @@ const Contact = () => {
           />
           <input
             required
-            placeholder="drop email addy*"
+            placeholder="email addy*"
             type="email"
             className="backdrop-blur w-full px-2 mb-3 focus:outline-0 bg-transparent border-b-2 placeholder:text-stone-100 bg-transparent rounded"
           />
           <textarea
             required
-            placeholder="be nice yo"
-            rows={3}
+            placeholder="heyyy"
+            rows={3} 
             className="backdrop-blur w-full px-2 my-3 placeholder:text-stone-100 focus:border-stone-100 focus:placeholder:animate-pulse placeholder:invisible focus:placeholder:visible focus:outline-0 bg-transparent border-[2px] rounded-md"
           ></textarea>
           <button

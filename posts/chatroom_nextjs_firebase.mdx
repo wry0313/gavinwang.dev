@@ -1,0 +1,269 @@
+---
+title: '💬 Building a Real-time Chatroom with Next.js and Firebase in 100 lines of code'
+date: '2023-06-13'
+---
+
+In just 100 lines of code, you can make a full-fleged real-time chatroom with next.js 13 and Firebase V9. We will also use typescript and tailwind to make the project development easier and more readable. 
+ 
+Here is a short demo (sped up 50%):
+![](/article/chatroom-demo-gif.gif)
+
+## Setting Up Next.js Pages Router System
+First in the terminal run:
+```bash
+npx create-next-app@latest
+
+What is your project named?  chatroom
+Would you like to use TypeScript with this project?  Yes
+Would you like to use ESLint with this project? Yes
+Would you like to use Tailwind CSS with this project?  Yes
+Would you like to use `src/` directory with this project?  Yes
+Use App Router (recommended)?  Yes
+Would you like to customize the default import alias?  Yes -> @/*
+
+cd chatroom
+```
+
+Now, within the app directory, you will find several files that represent Next.js' [App Router](https://nextjs.org/docs/app)  approach. However, for our specific project, we don't necessarily require the app router approach. This is mainly because the app router feature is relatively new and slightly more complex. Instead, we will opt for the more battle-tested and straightforward [Pages Router](https://nextjs.org/docs/pages) approach.
+
+First, you need to do the following steps:
+
+1. Expand the `./src/` directory.
+2. Delete the `app` folder.
+3. Create two folders: one called `pages` and another called `styles`.
+4. Inside the `styles` folder, create a file named `global.css`.
+
+```js
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+And in `pages` make a file `_app.tsx` with the following:
+
+```js
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+And go to `page.tsx`, delete the default code, and replace with this: 
+
+```js
+import "@/styles/global.css"
+import type { AppProps } from 'next/app'
+
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
+}
+```
+
+Now make a `index.tsx` in pages which will be your / route. Have the following code: 
+
+```js
+export default function Home() {
+
+  return (
+    <div className="w-[40rem] mx-auto">
+        Hello World
+    </div>
+  )
+}
+```
+
+## Setting up Firebase
+Now that you next.js set up, let's set up Firebase.
+First run in terminal: `npm install firebase` and `npm install react-firebase-hooks`. Then lets import the necessary firebase dependencies in `index.tsx` and some starter code.
+
+```js
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+
+import { useAuthState } from 'react-firebase-hooks/auth'
+import { useCollectionData } from 'react-firebase-hooks/firestore'
+
+firebase.initializeApp({
+  // your config 
+});
+
+// auth and firestore sdk as global variables for reference
+const auth = firebase.auth();
+const firestore = firebase.firestore();
+```
+
+We need to get our own firebase config for the initializeApp method. We can create one by heading to the [Firebase Console](https://console.firebase.google.com/u/0/) click "Add project".
+
+Next, click the gear icon on the top left and go to "Project settings". At the bottom of the page, you will find a code snippet and in there is your project config. Copy that and paste it in the initializeApp({}) method. 
+
+In addition, we can also set up the ways to authenticate in the console. Just go to the Authentication tab and "Sign-in method". In here click "Add new provider" and select Google. 
+
+## App Architecture
+
+Now we have Firebase configured, it is time to plan out the structure of the app. In your `index.tsx` add the following code:
+
+```js
+export default function Home() {
+  const [user, loading, error] = useAuthState(auth as any);
+  return (
+    <div className="w-[30rem] sm:w-[35rem] md:w-[40rem] mx-auto px-4 py-1">
+      <div>
+        <div className="p-3 flex flex-row justify-between rounded-xl shadow mb-3">
+          <h1>Welcome to the Chatroom!</h1>
+          {user && <SignOut />}
+          {!user && <SignIn />}
+        </div>
+        {loading && <div>Loading...</div>}
+        {error && <div>Error: {error.message}</div>}
+        {user && <Chatroom />}
+      </div>
+
+    </div>
+  );
+}
+```
+
+We will use the `useAuthState()` hook to retrieve the user object if logged in and null if not, the loading boolean, and the error if there is an error (undefined if not error). Here is a [documentation](https://github.com/CSFrequency/react-firebase-hooks/blob/master/auth/README.md#useauthstate) on the `useAuthState` hook if your interested.
+
+If the user is logged in we will display the `SignOut` button and the Chatroom interface. Otherwise, we will only display the `SignIn` button. In addition, when the server is loading, it will display Loading... and when an error occured it will be printed on the console.
+
+### Sign in, Sign out
+
+If you go to your localhost now, it won't run, as we still have to implement the SignOut, SignIn, and Chatroom components. Lets add them:
+
+```js
+function SignIn() {
+  const signInWithGoogle = () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    auth.signInWithRedirect(provider);
+  }
+  return <button onClick={signInWithGoogle}>Sign in with Google</button>
+}
+
+function SignOut() {
+  return <button onClick={() => auth.signOut()}>Sign Out</button>
+}
+
+function Chatroom() {
+    return <></>
+}
+```
+
+The `SignIn` component will return a button and when clicked will get the `GoogleAuthProvider` and use the signInWithRedirect to sign in. The `SignOut` will return a button and when clicked will call the `auth.signOut` method. 
+
+### Chatroom
+Now let's implement the chatroom component: 
+
+First, add this import statement on the top of the file: `import { useState, useRef, useEffect } from 'react';`
+Also install the library `uuid` with `npm install uuid` then `npm i --save-dev @types/uuid` and import it: `import { v4 } from "uuid";`
+
+```js
+function Chatroom() {
+  const messagesRef = firestore.collection('messages');
+  const query = messagesRef.orderBy('createdAt', 'desc').limit(30);
+  const [messages] = useCollectionData<Message>(query as any);
+    // use this query and listen to any updates the date in real time with the use collection data hook it returns an array of objects where each object is the chat message and the database. everytime the chat changes, react will rerender the messages
+
+  const [formValue, setFormValue] = useState('');
+  const dummy = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    dummy.current?.scrollIntoView({ behavior: "smooth" })
+  }, [messages])
+
+  const sendMessage = async (e: React.FormEvent) => {
+    e.preventDefault(); // normally when a form is submitted it will refresh the page but we can prevent that from happening
+
+    if (!formValue) {
+      return;
+    }
+    const { uid, photoURL } = auth.currentUser || {};
+
+
+    messagesRef.add({
+      text: formValue,
+      createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+      uid,
+      photoURL,
+      id: v4()
+    });
+    setFormValue('')
+  }
+  return (
+  <div id="chatroom">
+      <div className="overflow-auto h-[84vh]">
+        {messages && messages.map(msg => <ChatMessage key={msg.id} message={msg} />).reverse()}
+        <div ref={dummy} className=""></div>
+      </div>
+      <form onSubmit={sendMessage} className='border-[1px] mb-3'>
+        <input className='px-2 min-h-[3rem] w-[100%] rounded' value={formValue} onChange={(e) => setFormValue(e.target.value)} />
+      </form>
+    </div>
+  )
+}
+
+interface Message {
+  text: string;
+  uid: string;
+  id: string;
+  photoURL: string;
+  createdAt: firebase.firestore.FieldValue
+}
+
+function ChatMessage({ message }: { message: Message }) {
+  const { text, uid, photoURL } = message;
+
+  const isCurrentUser = uid === auth.currentUser?.uid;
+
+  return (
+    <div className={`p-3 mb-3 break-words border flex ${isCurrentUser ? 'flex-row-reverse' : 'flex-row'} shadow rounded-xl`}>
+      <img className="rounded-full shadow-xl h-fit" src={photoURL} alt={isCurrentUser ? 'my-user-profile' : 'user-profile'} width={30} height={30} />
+      <p className={`${isCurrentUser ? 'mr-3' : 'ml-3'}`}>{text}</p>
+    </div>
+  );
+}
+```
+
+Let's break down this code block into pieces and understand how it work. 
+
+```js
+const messagesRef = firestore.collection('messages');
+const query = messagesRef.orderBy('createdAt', 'desc').limit(30);
+const [messages] = useCollectionData<Message>(query as any);
+```
+The first line initializes a reference to the Firestore collection named 'messages'. And the second line creates a query to retrieve the latest 30 messages from the 'messages' collection. The orderBy method sorts the messages based on their 'createdAt' field in descending order, ensuring the most recent messages appear first. The limit method restricts the number of messages retrieved to 30.
+
+The third line uses the useCollectionData hook from Firebase to listen to updates in real-time for the given query. It returns an array of objects. We use assignment destructuring to get the returned object at the 0th index and we name it messages. Here is the documentation for [useCollectionData](https://github.com/CSFrequency/react-firebase-hooks/blob/master/firestore/README.md#usecollectiondata) if you are interested. 
+
+```js
+const dummy = useRef<HTMLDivElement>(null);
+useEffect(() => {
+  dummy.current?.scrollIntoView({ behavior: "smooth" })
+}, [messages])
+```
+
+This line creates a reference using the `useRef` hook to a `div` element in the DOM. This reference is used to scroll to the bottom of the chat whenever new messages are added. By scrolling to the `dummy` element, the chat view automatically shifts to display the latest messages. This is achieved with the `useEffect` hook. This `useEffect` hook is triggered whenever the messages array changes. It scrolls the view to the dummy element, smoothly bringing the user's focus to the latest messages.
+
+```js
+const [formValue, setFormValue] = useState('');
+
+const sendMessage = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formValue) {
+    return;
+  }
+  // ...
+}
+// ...
+```
+
+The `sendMessage` function is an event handler for submitting the chat message form. It prevents the default form submission behavior (page refresh) and checks if the `formValue` is empty. If it is not empty, it retrieves the current user's ID and photo URL and adds a new message object to the 'messages' collection in Firestore. It also generates a unique ID for the message using the `v4` function from the `uuid` library. Finally, it clears the input field by setting `formValue` to an empty string.
+
+Lastly, we have the message interface which defines the shape of the Message object. We also have the ChatMessage component which is responsible for displaying an individual chat message, including the user's profile image, message text, and appropriate styling based on whether the message is from the current user or another user.
+
+## Conclusion
+
+And there you have it! As you can see the combination between NextJs and Firebase will allow you to create something like a chatroom with endless rooms for more features and improvement. If you liked this blog post, feel free to leave a like and comment something below!
+
+Here is a [Github repo](https://github.com/wry0313/firebase-nextjs-chatroom). 

@@ -12,5 +12,5 @@ export const sendContactForm = async({name, email, comment}) => {
   } catch (err) {
     console.log(err)
     return -1;
-  }
+ }
 }
