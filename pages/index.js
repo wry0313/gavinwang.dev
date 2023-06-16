@@ -105,13 +105,35 @@ export default function Home({ allPostsData }) {
                 Web hosted demo of a fine-tuned ResNet model: classifies uploaded images as cats or dogs with probability scores
               </p>
             </li>
+
+            <li className="mt-[1.25rem] leading-2">
+              <Link className="text-lapis" href="/posts/chrom_extension_zero_to_one">
+                👨‍🏫 GPT Mentor 
+              </Link>
+              <div className="text-gray-600 text-base">
+                <Date dateString="2023-05-29" />
+              </div>
+              <p className="text-gray-600 text-base">
+                GPT Mentor is a chrome extension that tracks your website usage, retrieves information on your current tabs, and generates a productivity report using ChatGPT
+              </p>
+            </li>
+              
+            <li className="mt-[1.25rem] leading-2">
+              <Link className="text-lapis" href="/copyGPT">
+                💬 CopyGPT
+              </Link>
+              <div className="text-gray-600 text-base">
+                <Date dateString="2023-06-16" />
+              </div>
+              <p className="text-gray-600 text-base">
+                CopyGPT is a web app that lets you to upload your imessage chat history databse file and allows you to chat to a GPT-3 model that mimics your texting style. It's just like talking to yourself! (only supports locally run considering the sensitivity of uploading personal chat history)
+              </p>
+            </li>
           </ul>
         </section>
-          
           <section className='mt-4 p-4  w-fit shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn"'> 
           <Contact></Contact>
           </section>
-        
       </div>
       </div>
     </div>
