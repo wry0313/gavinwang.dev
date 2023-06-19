@@ -3,10 +3,11 @@ title: '💬 Building a Real-time Chatroom with Next.js and Firebase in 100 line
 date: '2023-06-13'
 ---
 
-In just 100 lines of code, you can make a full-fleged real-time chatroom with next.js 13 and Firebase V9. We will also use typescript and tailwind to make the project development easier and more readable. 
+In just 100 lines of code, you can make a full-fleged real-time chatroom with Next.js 13 and Firebase V9 that allows for user authentication and multiple users chatting at the same time. We will also use TypeScript and TailwindCSS to make the project development easier and faster. 
  
-Here is a short demo (sped up 50%):
-![](/article/chatroom-demo-gif.gif)
+ <iframe width="640" height="360"
+src="https://www.youtube.com/embed/BoTZVCnMkEw">
+</iframe>
 
 ## Setting Up Next.js Pages Router System
 First in the terminal run:
@@ -18,36 +19,15 @@ Would you like to use TypeScript with this project?  Yes
 Would you like to use ESLint with this project? Yes
 Would you like to use Tailwind CSS with this project?  Yes
 Would you like to use `src/` directory with this project?  Yes
-Use App Router (recommended)?  Yes
+Use App Router (recommended)?  No
 Would you like to customize the default import alias?  Yes -> @/*
 
 cd chatroom
 ```
 
-Now, within the app directory, you will find several files that represent Next.js' [App Router](https://nextjs.org/docs/app)  approach. However, for our specific project, we don't necessarily require the app router approach. This is mainly because the app router feature is relatively new and slightly more complex. Instead, we will opt for the more battle-tested and straightforward [Pages Router](https://nextjs.org/docs/pages) approach.
+For our specific project, we don't necessarily require the [App Router](https://nextjs.org/docs/app) approach. This is mainly because the app router feature is slightly more complex. Instead, we will opt for the more straightforward [Pages Router](https://nextjs.org/docs/pages) approach.
 
-First, you need to do the following steps:
-
-1. Expand the `./src/` directory.
-2. Delete the `app` folder.
-3. Create two folders: one called `pages` and another called `styles`.
-4. Inside the `styles` folder, create a file named `global.css`.
-
-```js
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-And in `pages` make a file `_app.tsx` with the following:
-
-```js
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-And go to `page.tsx`, delete the default code, and replace with this: 
+First, in the `pages` directory make a file `_app.tsx` with the following:
 
 ```js
 import "@/styles/global.css"
@@ -56,6 +36,14 @@ import type { AppProps } from 'next/app'
 export default function App({ Component, pageProps }: AppProps) {
   return <Component {...pageProps} />
 }
+```
+
+Also make sure you have a `styles` directory in the root of your project and a `global.css` file in there. In the `global.css` file add the following:
+
+```js
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 ```
 
 Now make a `index.tsx` in pages which will be your / route. Have the following code: 

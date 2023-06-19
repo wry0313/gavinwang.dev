@@ -10,12 +10,12 @@ const LinkBase = forwardRef(({ size, href, onClick }, ref) => {
       href={href}
       onClick={onClick}
       className={
-        "absolute top-0 left-0 -translate-x-full transform p-1 !text-dark-400 !no-underline opacity-0 duration-75 focus:opacity-100 group-hover:opacity-100"
+        "absolute top-1 left-0 -translate-x-full transform p-1 !text-dark-400 !no-underline opacity-0 duration-75 focus:opacity-100 group-hover:opacity-100"
       }
     >
       <svg
-        width={`${2.5 - 0.25 * size}rem`}
-        height={`${2.5 - 0.25 * size}rem`}
+        width={`${2.5 - 0.3 * size}rem`}
+        height={`${2.5 - 0.3 * size}rem`}
         fill="none"
         stroke="gray"
         viewBox="0 0 24 24"
