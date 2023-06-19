@@ -17,7 +17,7 @@ export default function TopNavbar() {
      
         <animated.span
           style={style3}
-          className="text-[1.7rem] mr-6"
+          className="whitespace-nowrap text-[1.7rem] mr-6"
           onMouseEnter={trigger3}
         >
           🎛️{" "}

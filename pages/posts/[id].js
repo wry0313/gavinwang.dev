@@ -64,7 +64,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        <h1 className="border-b-2 mb-2 text-[3.4rem] leading-[1.3] font-extrabold text-blue-900">
+        <h1 className="border-b-2 mb-2 text-[2rem] md:text-[2.5rem] lg:text-[3.4rem] leading-[1.3] font-extrabold text-blue-900">
           {data.title}
         </h1>
         
