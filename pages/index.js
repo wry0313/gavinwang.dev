@@ -56,7 +56,7 @@ export default function Home({ allPostsData }) {
           id="homepage sections"
           className="p-4 md:px-0 w-fit sm:w-[42rem] lg:w-[54rem] mx-auto "
         >
-          <section className="select-none group  bg-transparent backdrop-blur-[3px] text-white bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
+          <section className="select-none group  bg-transparent backdrop-blur-[3px] text-white bg-stone-100 shadow-md rounded-lg p-8 sm:hover:scale-105 duration-300 animate-fadeIn">
             <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
               🧑‍💻
               <Typing
@@ -87,7 +87,7 @@ export default function Home({ allPostsData }) {
 
           <section
             id="blogs-div"
-            className="p-4 mt-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn"
+            className="p-4 mt-4  bg-stone-100 shadow-md rounded-lg sm:hover:scale-105 duration-300 animate-fadeIn"
           >
             <h2 className="select-none text-[1.5rem] leading-[1.4]">
               📠 Blogs
@@ -112,7 +112,7 @@ export default function Home({ allPostsData }) {
 
           <section
             id="projects-div"
-            className="select-none mt-4 p-4  bg-stone-100 shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn"
+            className="select-none mt-4 p-4  bg-stone-100 shadow-md rounded-lg sm:hover:scale-105 duration-300 animate-fadeIn"
           >
             <h2 className="text-[1.5rem] leading-[1.4]">💾 Projects</h2>
             <ul className="list-none">
@@ -163,7 +163,7 @@ export default function Home({ allPostsData }) {
               </li>
             </ul>
           </section>
-          <section className='mt-4 p-4  w-fit shadow-md rounded-lg hover:scale-105 duration-300 animate-fadeIn"'>
+          <section className='mt-4 p-4  w-fit shadow-md rounded-lg sm:hover:scale-105 duration-300 animate-fadeIn"'>
             <Contact></Contact>
           </section>
         </div>
