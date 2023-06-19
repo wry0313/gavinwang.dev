@@ -40,8 +40,10 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
   const [style, trigger] = useBoop({ rotation: 10, timing: 80 });
   return (
     <>
-      <TopNavbar></TopNavbar>
-      <div className="w-fit max-w-[72rem] mx-auto py-[0.3rem] px-5">
+
+     <TopNavbar/>
+
+      <div className="overflow-hidden max-w-[72rem] mx-auto py-[0.3rem] px-5">
         <Head>
           <title>{data.title}</title>
           <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -110,12 +112,14 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
               </div>
             </div>
 
-            <div id="right section" className="max-w-[30%] ml-[4rem] mt-2">
-              <div className="sticky top-[4rem] space-y-4 z-20 hidden md:visible">
+            <div id="right section" className="invisible md:visible max-w-[30%] md:ml-[4rem] mt-2">
+              <div className="sticky top-[4rem] space-y-4 z-20 ">
                 <TableOfContents headings={headings} />
                 <ScrollTopAndComment handleClick={scrollToComment} />
               </div>
             </div>
+
+            
           </div>
 
           <div>

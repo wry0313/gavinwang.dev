@@ -13,7 +13,7 @@ export default function TopNavbar() {
   const [style3, trigger3] = useBoop({ rotation: 5 });
 
   return (
-    <nav className="shadow-md pl-2 md:pl-10 sticky top-0 left-0 right-0 flex items-baseline  bg-transparent backdrop-blur-[10px] p-1 pl-2 z-10">
+    <nav className="overflow-hidden shadow-md pl-2 md:pl-10 sticky top-0 left-0 right-0 flex items-baseline  bg-transparent backdrop-blur-[10px] p-1 pl-2 z-10">
      
         <animated.span
           style={style3}
@@ -47,7 +47,7 @@ export default function TopNavbar() {
           </Link>
         </animated.span>
 
-      <div className="hidden xl:visible mr-4 space-x-6 ml-auto flex flex-row">
+      <div className="invisible relative top-2 xl:visible mr-4 space-x-6 ml-auto flex flex-row">
         <BlueGitHubButton />
         <BlueTwitterButton />
         <BlueSpotifyButton />
