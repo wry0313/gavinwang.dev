@@ -3,7 +3,7 @@
 }
 
 .prose {
-  @apply w-[80vw] md:w-[72rem]
+  @apply w-[90vw] md:w-[72rem]
 }
 
 .prose :where(h2):not(:where([class~="not-prose"] *)) {

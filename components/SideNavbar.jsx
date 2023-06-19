@@ -14,7 +14,7 @@ export default function SideNavbar() {
     const [style2, trigger2] = useBoop({ rotation: 5 });
 
     return (
-        <nav className="select-none invisible lg:visible fixed left-0 bg-transparent backdrop-blur-sm backdrop-saturate-[0.9] flex flex-col items-start justify-center h-screen py-4 px-4 space-y-6">
+        <nav className="shadow select-none invisible xl:visible fixed left-0 bg-transparent backdrop-blur-sm backdrop-saturate-[1.1] flex flex-col items-start justify-center h-screen py-4 px-4 space-y-6 ">
 
             <animated.span style={style1} onMouseEnter={trigger1}>
             <Link href="/#blogs-div" scroll={false} className="block group transition duration-300 text-stone-100 font-bold text-xl "> ~/blogs
