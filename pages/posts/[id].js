@@ -41,7 +41,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
   return (
     <>
       <TopNavbar></TopNavbar>
-      <div className="max-w-[72rem] mx-auto py-[0.3rem] px-5">
+      <div className="w-fit max-w-[72rem] mx-auto py-[0.3rem] px-5">
         <Head>
           <title>{data.title}</title>
           <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -111,7 +111,7 @@ export default function Post({ source, data, wordCount, readTime, headings }) {
             </div>
 
             <div id="right section" className="max-w-[30%] ml-[4rem] mt-2">
-              <div className="sticky top-[4rem] space-y-4 z-20 invisible md:visible">
+              <div className="sticky top-[4rem] space-y-4 z-20 hidden md:visible">
                 <TableOfContents headings={headings} />
                 <ScrollTopAndComment handleClick={scrollToComment} />
               </div>

@@ -54,7 +54,7 @@ export default function Home({ allPostsData }) {
         <Navbar />
         <div
           id="homepage sections"
-          className="p-4 md:px-0 w-[28rem] sm:w-[44rem] lg:w-[54rem] mx-auto "
+          className="p-4 md:px-0 w-fit sm:w-[42rem] lg:w-[54rem] mx-auto "
         >
           <section className="select-none group  bg-transparent backdrop-blur-[3px] text-white bg-stone-100 shadow-md rounded-lg p-8 hover:scale-105 duration-300 animate-fadeIn">
             <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">

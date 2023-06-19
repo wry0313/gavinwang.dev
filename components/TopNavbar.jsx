@@ -47,7 +47,7 @@ export default function TopNavbar() {
           </Link>
         </animated.span>
 
-      <div className="invisible xl:visible mr-4 space-x-6 ml-auto flex flex-row">
+      <div className="hidden xl:visible mr-4 space-x-6 ml-auto flex flex-row">
         <BlueGitHubButton />
         <BlueTwitterButton />
         <BlueSpotifyButton />

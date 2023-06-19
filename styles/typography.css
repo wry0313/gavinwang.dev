@@ -2,6 +2,10 @@
   @apply font-bold text-blue-900 text-[2.5rem] mt-[2rem] ;
 }
 
+.prose {
+  @apply w-[30rem] lg:w-[72rem]
+}
+
 .prose :where(h2):not(:where([class~="not-prose"] *)) {
   @apply font-bold text-sky-800 text-[2.1rem] mt-[2rem] scroll-mt-1;
 }
