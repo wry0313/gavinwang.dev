@@ -63,7 +63,7 @@ export default function Home({ allPostsData }) {
                 words={[
                   "gavinwang.dev",
                   "machine learning",
-                  "web devevelopment",
+                  "web development",
                   "mathematics",
                   "hmu on twitter :)",
                 ]}
