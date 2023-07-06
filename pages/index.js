@@ -1,5 +1,5 @@
 import Head from "next/head";
-import ParticlesLinks from "../components/ParticleLinks";
+import ParticlesAmongus from "../components/ParticlesAmongus";
 import Navbar from "../components/SideNavbar";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
@@ -21,7 +21,7 @@ export async function getStaticProps() {
 export default function Home({ allPostsData }) {
   return (
     <div className="gradient-animation scroll-behavior:smooth">
-      <ParticlesLinks />
+      <ParticlesAmongus />
 
       <Head>
         <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -57,30 +57,31 @@ export default function Home({ allPostsData }) {
           className="p-4 md:px-0 w-fit sm:w-[46rem] lg:w-[46rem] xl:w-[56rem] mx-auto "
         >
           <section className="select-none group  bg-transparent backdrop-blur-[3px] text-white bg-stone-100 shadow-md rounded-lg p-8 sm:hover:scale-105 duration-300 animate-fadeIn">
-            <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold flex">
-              🧑‍💻
-              <Typing
+            <h1 className="text-[2.2rem] md:text-[4.2rem] font-bold fle flex flex-row gap-x-2">
+              💻 
+
+            <Typing
                 words={[
-                  "gavinwang.dev",
+                  "Hi, I'm Gavin",
+                  "I love coding",
+                  "making websites",
+                  "building projects",
                   "machine learning",
-                  "web development",
-                  "mathematics",
-                  "hmu on twitter :)",
+                  "and...",
+                  "mathematics :)",
                 ]}
-                speed="300"
+                speed="200"
               />
+
             </h1>
             <section className="text-[1.3rem] md:text-[1.5rem]">
-              <p className="inline">Hi there! </p>
+              <p className="inline">Hey there! I'm Gavin Wang </p>
               <div className="inline-block animate-wiggle text-[1.5rem]">
-                {" "}
-                👋{" "}
+                👋
               </div>
               <p className="inline">
-                {" "}
-                My name is Gavin and I'll be sharing what I've learned about
-                machine learning, web dev 🌐, and all things coding on
-                this blog site 
+                {' '}
+                I'm a incoming cs student at Northwestern University. In my spare time I love working making side projects. Let me know if you like to collaborate!
               </p>
             </section>
           </section>
@@ -90,7 +91,7 @@ export default function Home({ allPostsData }) {
             className="p-4 mt-4  bg-stone-100 shadow-md rounded-lg sm:hover:scale-105 duration-300 animate-fadeIn"
           >
             <h2 className="select-none text-[1.5rem] leading-[1.4]">
-              📠 Blogs
+              Blogs
             </h2>
             <ul className="list-none">
               {allPostsData.map((post) => (
@@ -114,11 +115,11 @@ export default function Home({ allPostsData }) {
             id="projects-div"
             className="select-none mt-4 p-4  bg-stone-100 shadow-md rounded-lg sm:hover:scale-105 duration-300 animate-fadeIn"
           >
-            <h2 className="text-[1.5rem] leading-[1.4]">💾 Projects</h2>
+            <h2 className="text-[1.5rem] leading-[1.4]">Projects</h2>
             <ul className="list-none">
               <li className="mt-[1.25rem] leading-2">
                 <Link className="text-lapis" href="/dog">
-                  🐕 Dog vs. 🐈 Cat Classifier Demo
+                  Dog vs. Cat Classifier Demo
                 </Link>
                 <div className="text-gray-600 text-base">
                   <Date dateString="2023-05-03" />
@@ -134,7 +135,7 @@ export default function Home({ allPostsData }) {
                   className="text-lapis"
                   href="/posts/chrom_extension_zero_to_one"
                 >
-                  👨‍🏫 GPT Mentor
+                  GPT Mentor
                 </Link>
                 <div className="text-gray-600 text-base">
                   <Date dateString="2023-05-29" />
@@ -148,7 +149,7 @@ export default function Home({ allPostsData }) {
 
               <li className="mt-[1.25rem] leading-2">
                 <Link className="text-lapis" href="/copyGPT">
-                  💬 CopyGPT
+                  CopyGPT
                 </Link>
                 <div className="text-gray-600 text-base">
                   <Date dateString="2023-06-16" />

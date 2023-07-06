@@ -1,5 +1,5 @@
 .prose :where(h1):not(:where([class~="not-prose"] *)) {
-  @apply font-bold text-blue-900 text-[2.5rem] mt-[2rem] ;
+  @apply font-bold text-black text-[2.5rem] mt-[2rem] ;
 }
 
 .prose {
@@ -7,13 +7,12 @@
 }
 
 .prose :where(h2):not(:where([class~="not-prose"] *)) {
-  @apply font-bold text-sky-800 text-[2.1rem] mt-[2rem] scroll-mt-1;
+  @apply font-bold text-black text-[2.1rem] mt-[2rem] scroll-mt-1;
 }
 
 .prose :where(h3):not(:where([class~="not-prose"] *)) {
-  @apply font-bold text-sky-800 text-[1.6rem] mt-[2rem] ;
+  @apply font-bold text-black text-[1.6rem] mt-[2rem] ;
 }
-
 
 .prose :where(a):not(:where([class~="not-prose"] *)) {
     @apply text-blue-600 no-underline hover:text-blue-500;
@@ -22,8 +21,6 @@
 .prose :where(pre):not(:where([class~="not-prose"] *)) {
     @apply p-0 bg-transparent;
 }
-
-
 
 .prose *[id] {
   scroll-margin-top: 3rem;

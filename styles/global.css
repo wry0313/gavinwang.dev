@@ -12,11 +12,6 @@
   }
 }
 
-.gradient-animation {
-  background: radial-gradient( #bbcde5, #89bbfe,#639fab,#acedff, #639fab);
-  background-size: 400% 400%;
-  animation: gradient 40s ease infinite;
-}
 
 @keyframes gradient {
   0% {
